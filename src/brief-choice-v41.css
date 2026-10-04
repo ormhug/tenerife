@@ -1,0 +1,33 @@
+@font-face {
+  font-family: 'Commissioner';
+  src: url('assets/fonts/commissioner.woff2') format('woff2');
+  font-style: normal;
+  font-weight: 400 650;
+  font-display: swap;
+}
+
+/* The primary action sits directly under the invitation. */
+.hero-brief .brief-next {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  justify-content: stretch;
+  width: min(100%, 440px);
+  margin-top: clamp(24px, 3vw, 38px);
+  opacity: var(--brief-copy, 1);
+  translate: 0 calc((1 - var(--brief-copy, 1)) * 12px);
+}
+.hero-brief .brief-go {
+  justify-content: space-between;
+  width: 100%;
+  min-height: 54px;
+  padding: 15px 20px;
+  font: 600 16px/1.3 'Commissioner', Onest, sans-serif;
+  letter-spacing: -.01em;
+}
+@media (max-width: 760px) {
+  .hero-brief .brief-next {width: 100%;margin-top: 22px;}
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-brief .brief-next {opacity: 1;translate: none;}
+}
+.motion-off .hero-brief .brief-next {opacity: 1;translate: none;}

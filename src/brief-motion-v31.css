@@ -1,0 +1,30 @@
+/* The question arrives line by line as the visitor scrolls into the paper screen. */
+.hero-brief.brief-motion-ready .brief-title-line > span {
+  transform: translate(var(--question-x,0px),var(--question-y,0px)) rotate(var(--question-turn,0deg));
+  opacity: var(--question-ink,1);
+  transition: none;
+  will-change: auto;
+}
+
+/* Screen-wide pointer movement adds a gentle drift to the existing glass tilt. */
+.photo-window {
+  transform: translate(var(--photo-follow-x,0px),var(--photo-follow-y,0px))
+    perspective(1000px) rotateX(var(--tilt-x,0deg)) rotateY(var(--tilt-y,0deg))
+    scale(calc(1 + var(--cursor-light,0) * .012));
+}
+
+html.motion-off .hero-brief.brief-motion-ready .brief-title-line > span {
+  transform: none;
+  opacity: 1;
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-brief.brief-motion-ready .brief-title-line > span {transform: none;opacity: 1;}
+  .photo-window {transform: none;}
+}
+@media (hover: none), (pointer: coarse) {
+  .photo-window {transform: none;}
+}
+@media print {
+  .hero-brief.brief-motion-ready .brief-title-line > span {transform: none;opacity: 1;}
+  .photo-window {transform: none;}
+}

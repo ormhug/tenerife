@@ -1,0 +1,129 @@
+/* Photo-led choices float above the page; the dialog remains a native modal. */
+.benefit-picker {
+  width: min(1020px, calc(100% - 48px));
+  max-height: calc(100svh - 40px);
+  padding: 28px;
+  border: 1px solid #ffffffa6;
+  background: #eceeefb8;
+  color: var(--ink);
+  backdrop-filter: blur(24px) saturate(.85);
+  -webkit-backdrop-filter: blur(24px) saturate(.85);
+  box-shadow: 0 24px 90px #1d212438, inset 0 1px 0 #ffffff8c;
+  scrollbar-color: #5f666b80 transparent;
+  scroll-padding-block: 62px 24px;
+}
+.benefit-picker::backdrop {
+  background: transparent;
+  backdrop-filter: blur(9px);
+  -webkit-backdrop-filter: blur(9px);
+}
+.benefit-picker[open] {animation: picker-surface-enter .46s cubic-bezier(.16, 1, .3, 1) both;}
+.benefit-picker[open]::backdrop {animation: picker-backdrop-enter .35s ease-out both;}
+.benefit-picker[open] .benefit-choice {
+  animation: picker-choice-enter .42s cubic-bezier(.16, 1, .3, 1) var(--picker-delay, .06s) both;
+}
+.benefit-picker .benefit-choice:nth-child(2) {--picker-delay: .1s;}
+.benefit-picker .benefit-choice:nth-child(3) {--picker-delay: .14s;}
+.benefit-picker .benefit-choice:nth-child(4) {--picker-delay: .18s;}
+.benefit-picker .benefit-choice:nth-child(n+5) {--picker-delay: .22s;}
+.benefit-picker[open] .benefit-picker-help {animation: picker-choice-enter .42s cubic-bezier(.16, 1, .3, 1) .18s both;}
+@keyframes picker-surface-enter {
+  from {opacity: 0;transform: translateY(24px);}
+  to {opacity: 1;transform: translateY(0);}
+}
+@keyframes picker-backdrop-enter {from {opacity: 0;} to {opacity: 1;}}
+@keyframes picker-choice-enter {
+  from {opacity: 0;transform: translateY(16px);}
+  to {opacity: 1;transform: translateY(0);}
+}
+.benefit-picker .benefit-picker-close {
+  position: sticky;
+  z-index: 3;
+  top: 0;
+  right: auto;
+  margin: -8px -8px -36px auto;
+  background: #f7f8f8dc;
+  border-color: #ffffffd9;
+  color: var(--ink);
+  box-shadow: 0 3px 16px #1d21241a;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+.benefit-picker .benefit-picker-close:hover {background: #fff;}
+.benefit-picker-heading {padding-right: 56px;margin-bottom: 22px;}
+.benefit-picker-heading h2 {font-size: clamp(26px, 3vw, 38px);line-height: 1.14;}
+.benefit-picker-heading p {color: var(--ink-soft);font-size: 14px;line-height: 1.5;}
+.benefit-picker-options {gap: 16px;}
+.benefit-picker .benefit-choice {
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-rows: auto 1fr;
+  min-height: 0;
+  border-color: #ffffff9c;
+  background: #f7f8f85c;
+  box-shadow: 0 6px 20px #1d21240a;
+}
+.benefit-picker .benefit-choice:hover {background: #f7f8f88c;border-color: #fff;}
+.benefit-choice-picture {
+  min-height: 0;
+  height: auto;
+  aspect-ratio: 2.55 / 1;
+  background: #858d91;
+}
+.benefit-choice-picture img {filter: none;}
+.benefit-choice-picture::after {opacity: .06;}
+.benefit-choice-copy {
+  justify-content: flex-start;
+  min-height: 76px;
+  gap: 7px;
+  padding: 15px 18px;
+  background: #f7f8f82e;
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+.benefit-choice-category {display: none;}
+.benefit-choice-copy strong {font-size: 17px;font-weight: 600;line-height: 1.3;color: var(--ink);}
+.benefit-choice-hint {font-size: 12px;color: var(--ink-soft);}
+.benefit-picker .benefit-picker-help {
+  min-height: 54px;
+  margin-top: 22px;
+  background: #b8441d18 !important;
+  border-color: #b8441d75 !important;
+  color: var(--ink) !important;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: inset 0 1px 0 #ffffff59;
+}
+.benefit-picker .benefit-picker-help:hover {background: #b8441d2e !important;}
+.benefit-picker button:focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 3px;
+  box-shadow: 0 0 0 5px #f7f8f8;
+}
+@media (max-width: 620px) {
+  .benefit-picker {width: calc(100% - 24px);max-height: calc(100svh - 24px);padding: 20px 16px;}
+  .benefit-picker .benefit-picker-close {margin-right: -4px;}
+  .benefit-picker-heading {padding-right: 42px;margin-bottom: 20px;}
+  .benefit-picker-heading h2 {font-size: clamp(24px, 6.8vw, 30px);overflow-wrap: anywhere;}
+  .benefit-picker-options {grid-template-columns: minmax(0, 1fr);gap: 14px;}
+  .benefit-choice-picture {aspect-ratio: 1.9 / 1;}
+  .benefit-choice-copy {padding: 14px 16px;min-height: 72px;}
+}
+@media (prefers-reduced-transparency: reduce) {
+  .benefit-picker {background: var(--stone-1, #eceeef);backdrop-filter: none;-webkit-backdrop-filter: none;}
+  .benefit-picker::backdrop {background: transparent;backdrop-filter: none;-webkit-backdrop-filter: none;}
+  .benefit-picker .benefit-choice, .benefit-choice-copy {background: var(--stone-0, #f7f8f8);backdrop-filter: none;-webkit-backdrop-filter: none;}
+  .benefit-picker .benefit-picker-help {background: #e8d3cc !important;backdrop-filter: none;-webkit-backdrop-filter: none;}
+  .benefit-picker .benefit-picker-close {background: var(--stone-0, #f7f8f8);backdrop-filter: none;-webkit-backdrop-filter: none;}
+}
+.motion-off .benefit-choice-picture img {transition: none;}
+.motion-off .benefit-choice:hover img {transform: none;}
+.motion-off .benefit-picker[open],
+.motion-off .benefit-picker[open]::backdrop,
+.motion-off .benefit-picker[open] .benefit-choice,
+.motion-off .benefit-picker[open] .benefit-picker-help {animation: none;}
+@media (prefers-reduced-motion: reduce) {
+  .benefit-picker[open],
+  .benefit-picker[open]::backdrop,
+  .benefit-picker[open] .benefit-choice,
+  .benefit-picker[open] .benefit-picker-help {animation: none;}
+}

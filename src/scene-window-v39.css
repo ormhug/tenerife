@@ -1,0 +1,105 @@
+/* v39 — "expanding window" scene transitions (replaces scene-stack-v37).
+   v3.js renderSceneStack() writes the custom properties per chapter.
+   Only transform and opacity change, so the motion stays on the GPU. */
+
+.island-pinned .island-chapters {background: #1a1a1a;}
+
+.island-pinned .island-chapter {
+  opacity: var(--scene-opacity, 0);
+  z-index: var(--scene-layer, 0);
+  transform: none;
+  border-radius: 0;
+  overflow: clip;
+  box-shadow: none;
+}
+
+/* The window: scales as a frame and clips the photo. */
+.island-pinned .chapter-visual {
+  position: absolute;
+  inset: 0;
+  z-index: -3;
+  opacity: 1;
+  overflow: clip;
+  transform: translate3d(0, var(--frame-y, 0%), 0) scale(var(--frame-sx, 1), var(--frame-sy, 1));
+  transform-origin: 50% 50%;
+  will-change: transform;
+  backface-visibility: hidden;
+}
+/* Counter-scale inside the window: the photo keeps its proportions. */
+.island-pinned .chapter-image {
+  transform: scale(var(--img-sx, 1.06), var(--img-sy, 1.06));
+  transform-origin: 50% 50%;
+  will-change: transform;
+  clip-path: none;
+}
+.island-pinned .chapter-photo {transform: none; will-change: auto;}
+.island-pinned .chapter-shade {clip-path: none;}
+/* The scene that steps back is shaded. */
+.island-pinned .chapter-visual::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  background: #111212;
+  opacity: var(--scene-dim, 0);
+  pointer-events: none;
+}
+.island-pinned .island-chapter::after {display: none;}
+
+/* Copy: everything except the title fades and drifts in layers. */
+.island-pinned .chapter-body {opacity: 1; transform: none; transition: none;}
+.island-pinned .chapter-body > .chapter-top,
+.island-pinned .chapter-body > .chapter-bottom,
+.island-pinned .chapter-body > .chapter-route-details,
+.island-pinned .chapter-body > .chapter-scroll-cue {
+  --copy-shift: 36px;
+  opacity: var(--copy, 1);
+  transform: translate3d(0, calc((1 - var(--copy, 1)) * var(--copy-dir, 1) * var(--copy-shift)), 0);
+}
+.island-pinned .chapter-body > .chapter-top {--copy-shift: 18px;}
+.island-pinned .chapter-body > .chapter-bottom {--copy-shift: 44px;}
+.island-pinned .chapter-body > .chapter-route-details {--copy-shift: 24px;}
+.island-pinned .chapter-body > .chapter-scroll-cue {--copy-shift: 14px;}
+.island-pinned .chapter-body > .chapter-name {opacity: 1; transform: none;}
+.island-pinned .offer-title-text {opacity: 1; transform: none;}
+.island-pinned .chapter-tracker {opacity: var(--copy, 1); transition: none;}
+
+/* Title: each word rises out of its own mask, one after another. */
+.scene-word {
+  display: inline-block;
+  overflow: visible;
+  vertical-align: top;
+  padding: .02em .02em .12em;
+  margin: 0 -.02em -.12em;
+}
+.scene-word > span {display: inline-block;}
+.island-pinned .title-moving .scene-word {overflow: hidden;}
+.island-pinned .scene-word > span {
+  /* Word progress: staggered from the title progress. */
+  --wp: clamp(0, calc(var(--title-p, 1) * (1 + (var(--words, 3) - 1) * .16) - var(--i, 0) * .16), 1);
+  transform: translate3d(0, calc((1 - var(--wp)) * var(--title-dir, 1) * 108%), 0) rotate(calc((1 - var(--wp)) * var(--title-dir, 1) * 4deg));
+  transform-origin: 0 100%;
+  opacity: min(1, calc(var(--wp) * 1.6));
+  will-change: transform;
+}
+
+/* Short desktop windows: keep the pinned scene readable. */
+@media (min-width: 761px) and (max-height: 640px) {
+  .island-pinned .island-editorial .chapter-body {padding-top: 22px; padding-bottom: 74px;}
+  .island-pinned .island-editorial .chapter-name {font-size: clamp(54px, 7.2vw, 104px); margin-bottom: 14px;}
+  .island-pinned .island-editorial .chapter-description p {font-size: 16px;}
+  .island-pinned .chapter-route-details {bottom: 22px;}
+  .island-pinned .chapter-scroll-cue {bottom: 16px;}
+}
+
+.motion-off .chapter-visual {opacity: 1; transform: none;}
+.motion-off .chapter-image {transform: none;}
+@media (prefers-reduced-motion: reduce) {
+  .island-pinned .chapter-visual, .island-pinned .chapter-image {transform: none;}
+  .island-pinned .chapter-visual::after {display: none;}
+  .island-pinned .chapter-body > *, .island-pinned .scene-word > span {transform: none !important; opacity: 1 !important;}
+}
+@media print {
+  .chapter-visual {display: none;}
+  .scene-word > span {transform: none !important; opacity: 1 !important;}
+}

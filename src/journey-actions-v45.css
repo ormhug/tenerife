@@ -1,0 +1,106 @@
+/* The native button's stretched hit area makes the entire existing card usable. */
+#how .journey-step-actionable {cursor: pointer;}
+#how .journey-step-open {
+  position: static;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  width: 100%;
+  min-height: 44px;
+  margin-top: auto;
+  padding: 24px 0 0;
+  border: 0;
+  background: transparent;
+  color: var(--ink, #1d2124);
+  font: 600 14px/1.4 Onest, sans-serif;
+  text-align: left;
+  cursor: pointer;
+}
+#how .journey-step-open::after {
+  content: '';
+  position: absolute;
+  z-index: 5;
+  inset: 0;
+  border: 1px solid transparent;
+  border-radius: inherit;
+  transition: border-color .2s ease, background-color .2s ease;
+}
+#how .journey-step-open:hover::after {border-color: rgba(184,68,29,.38);background: rgba(184,68,29,.025);}
+#how .journey-step-open-arrow {font-size: 21px;transition: translate .2s ease;}
+#how .journey-step-open:hover .journey-step-open-arrow {translate: 2px -2px;}
+#how .journey-step-open:focus-visible {outline: none;}
+#how .journey-step-open:focus-visible::after {border: 3px solid var(--lava, #b8441d);}
+.journey-detail {
+  width: min(660px, calc(100vw - 32px));
+  max-width: none;
+  max-height: calc(100dvh - 40px);
+  margin: auto;
+  padding: 0;
+  overflow: auto;
+  overscroll-behavior: contain;
+  border: 1px solid rgba(255,255,255,.7);
+  border-radius: 16px;
+  background: rgba(236,238,239,.86);
+  color: var(--ink, #1d2124);
+  box-shadow: 0 24px 90px rgba(29,33,36,.2);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+}
+.journey-detail::backdrop {background: rgba(29,33,36,.12);backdrop-filter: blur(9px);-webkit-backdrop-filter: blur(9px);}
+.journey-detail[open] {animation: journey-detail-enter .36s cubic-bezier(.16,1,.3,1);}
+.journey-detail-image {display: block;width: 100%;height: clamp(135px, 24vh, 190px);object-fit: cover;}
+.journey-detail-close {
+  position: absolute;
+  z-index: 2;
+  top: 14px;
+  right: 14px;
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border: 1px solid rgba(255,255,255,.8);
+  border-radius: 50%;
+  background: rgba(247,248,248,.9);
+  color: var(--ink, #1d2124);
+  font: 27px/1 Onest, sans-serif;
+  cursor: pointer;
+}
+.journey-detail-body {padding: 28px 32px 32px;}
+.journey-detail-title {margin: 0 0 14px;font: 600 clamp(23px,3vw,31px)/1.22 Unbounded, sans-serif;letter-spacing: -.04em;text-wrap: balance;}
+.journey-detail-text {margin: 0 0 18px;color: var(--muted, #5f666b);font: 400 15px/1.65 Onest, sans-serif;}
+.journey-detail-list {display: grid;gap: 10px;margin: 0 0 25px;padding-left: 21px;font: 400 15px/1.6 Onest, sans-serif;}
+.journey-detail-list li::marker {color: var(--lava, #b8441d);}
+.journey-detail-action {
+  display: block;
+  width: 100%;
+  min-height: 50px;
+  padding: 13px 20px;
+  border: 1px solid rgba(184,68,29,.32);
+  border-radius: 10px;
+  background: rgba(184,68,29,.10);
+  color: var(--ink, #1d2124);
+  font: 600 15px/1.4 Onest, sans-serif;
+  cursor: pointer;
+  transition: background-color .2s ease;
+}
+.journey-detail-action:hover {background: rgba(184,68,29,.19);}
+.journey-detail :is(button, a):focus-visible {outline: 2px solid var(--lava, #b8441d);outline-offset: 3px;}
+@keyframes journey-detail-enter {from {opacity: 0;transform: translateY(22px);}to {opacity: 1;transform: translateY(0);}}
+@media (max-width: 600px) {
+  .journey-detail {width: calc(100vw - 24px);max-height: calc(100dvh - 24px);}
+  .journey-detail-body {padding: 24px 22px;}
+}
+@media (prefers-reduced-transparency: reduce) {
+  .journey-detail {background: var(--stone-1, #eceeef);backdrop-filter: none;-webkit-backdrop-filter: none;}
+}
+.motion-off .journey-detail[open] {animation: none;}
+.motion-off #how .journey-step-open-arrow {transition: none;}
+@media (prefers-reduced-motion: reduce) {
+  .journey-detail[open] {animation: none;}
+  #how .journey-step-open-arrow {transition: none;}
+}
+@media print {
+  .journey-detail, #how .journey-step-open {display: none;}
+}

@@ -1,0 +1,11 @@
+/* v38 — clarity pass.
+    Benefit cards are not a sequence, so their 01/02/03 numbers are hidden. */
+
+/* ---------- 2. Benefit cards: not a sequence ---------- */
+.brief-strip .benefit-number {display: none;}
+
+/* ---------- 3. Step photos on phones ----------
+   .reactive-panel hides its ::before/::after on touch screens and with
+   animation off (they were the cursor light). The "how to book" cards use
+   ::before for their photo, so phones showed empty boxes. Bring it back. */
+#how .step::before {display: block;}

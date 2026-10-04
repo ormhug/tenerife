@@ -1,0 +1,70 @@
+/* The collection action arrives once, then responds directly to the visitor. */
+.hero-brief .brief-go {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  transition: background-color .2s ease, translate .2s ease, scale .15s ease;
+}
+.hero-brief .brief-go > :is(span, svg) {
+  position: relative;
+  z-index: 1;
+}
+.hero-brief .brief-go > span {transition: translate .25s ease;}
+.hero-brief .brief-go svg {
+  flex: 0 0 18px;
+  transition: translate .3s cubic-bezier(.16, 1, .3, 1);
+}
+.hero-brief .brief-go::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  pointer-events: none;
+  background: linear-gradient(105deg, transparent 25%, rgba(255,255,255,.16) 50%, transparent 75%);
+  transform: translateX(-105%);
+}
+.hero-brief .brief-go.brief-action-arrived {
+  animation: brief-action-arrive .5s cubic-bezier(.16, 1, .3, 1);
+}
+.hero-brief .brief-go:focus-visible {
+  animation: none;
+  translate: 0 -2px;
+}
+.hero-brief .brief-go:focus-visible > span {translate: 2px 0;}
+.hero-brief .brief-go:focus-visible svg {translate: 6px 0;}
+.hero-brief .brief-go:focus-visible::before {
+  transform: translateX(105%);
+  transition: transform .65s ease;
+}
+@media (hover: hover) and (pointer: fine) {
+  .hero-brief .brief-go:hover {translate: 0 -2px;}
+  .hero-brief .brief-go:hover > span {translate: 2px 0;}
+  .hero-brief .brief-go:hover svg {translate: 6px 0;}
+  .hero-brief .brief-go:hover::before {
+    transform: translateX(105%);
+    transition: transform .65s ease;
+  }
+}
+.hero-brief .brief-go:active {translate: 0 1px;scale: .99;}
+@keyframes brief-action-arrive {
+  from {opacity: .65;transform: translateY(10px);}
+  to {opacity: 1;transform: translateY(0);}
+}
+.motion-off .hero-brief .brief-go,
+.motion-off .hero-brief .brief-go > :is(span, svg) {
+  animation: none;
+  transition: none;
+  translate: none;
+  scale: none;
+}
+.motion-off .hero-brief .brief-go::before {display: none;}
+@media (prefers-reduced-motion: reduce) {
+  .hero-brief .brief-go.brief-action-arrived {animation: none;}
+  .hero-brief .brief-go,
+  .hero-brief .brief-go > :is(span, svg) {
+    animation: none;
+    transition: none;
+    translate: none !important;
+    scale: none !important;
+  }
+  .hero-brief .brief-go::before {display: none;}
+}

@@ -1,0 +1,117 @@
+masca-sunset-hero.jpg
+Photographer: Luis
+Source: https://unsplash.com/photos/a-scenic-view-of-a-mountain-with-a-village-in-the-foreground-i5txLAUpQRs
+License: Unsplash License
+License URL: https://unsplash.com/license
+Notes: Real location photo, not company portfolio.
+
+teide-volcano.jpg
+Photographer: Marek Piwnicki
+Source: https://unsplash.com/photos/brown-and-white-mountain-under-blue-sky-during-daytime-LYIFtMXzo10
+License: Unsplash License
+License URL: https://unsplash.com/license
+Notes: Real location photo, not company portfolio.
+
+anaga-forest.jpg
+Photographer: Abel Cerezuela Sanjulián
+Source: https://commons.wikimedia.org/wiki/File:Bosque_Encantado_en_Anaga.jpg
+License: CC0 1.0
+License URL: https://creativecommons.org/publicdomain/zero/1.0/
+Notes: Real location photo, not company portfolio.
+
+tenerife-yacht-cliff.jpg
+Photographer: Maksim Shutov
+Source: https://unsplash.com/photos/a-boat-in-the-water-by-a-cliff-d_kHKUGn-rE
+License: Unsplash License
+License URL: https://unsplash.com/license
+Notes: Real location photo, not company portfolio.
+
+mustang-illustration.jpg
+Photographer: Koke Mayayo (TheVisualKiller)
+Source: https://unsplash.com/photos/silver-ford-mustang-uG8RGApPGWk
+License: Unsplash License
+License URL: https://unsplash.com/license
+Notes: Illustrative service photo, not the company fleet or Tenerife location.
+
+jetski-illustration.jpg
+Photographer: Ahmed Saeed
+Source: https://unsplash.com/photos/jet-ski-speeding-through-the-ocean-leaving-a-white-wake-GdXqXp7XYAs
+License: Unsplash License
+License URL: https://unsplash.com/license
+Notes: Illustrative service photo, not the company fleet or Tenerife location.
+
+benijo-photoshoot-coast.jpg
+Photographer: Dave Ruck
+Source: https://unsplash.com/photos/brown-rock-formation-in-body-of-water-hrRqd0IlZmk
+License: Unsplash License
+License URL: https://unsplash.com/license
+Notes: Real location photo, not company portfolio.
+
+tenerife-quad.jpg
+Photographer: James Baldwin
+Source: https://unsplash.com/photos/four-persons-riding-atv-on-road-kOge5S1NN-o
+License: Unsplash License
+License URL: https://unsplash.com/license
+Notes: Real location photo, not company portfolio.
+
+2026-09-30 redesign: story-teide.png, story-coast.png, story-masca.png, story-ocean.png were supplied by the user as references and copied byte-for-byte. No independent author/license is claimed. story-masca.png bears saltinourhair.com; credit added in the site footer and the original watermark preserved in the source asset.
+
+Vector redesign: teide.svg, coast.svg, masca.svg, ocean.svg are original layered SVG illustrations authored for this project from the supplied landscape references; no raster embeds. Original supplied photographs remain preserved.
+Photo refresh for Tenerife Travel — 2026-09-30
+
+All photos downloaded directly from the Unsplash image CDN for use in this website, with native source detail rather than an AI enlargement. Each source page identifies the Tenerife location and the free Unsplash License. Do not imply these are the company's own portfolio or boats.
+
+Recommended hero: teide-alternative-hires.jpg
+Dimensions: 3200 x 2133; JPEG 695661 bytes
+Photographer: Gretchen Albers (@gcea_photography)
+Source: https://unsplash.com/photos/silhouette-mountain-during-sunset-LZEudOaiHLE
+Download: https://images.unsplash.com/photo-1555701943-ac718ccc125b?fit=max&fm=jpg&q=88&w=3200
+Location: Mount Teide, Spain
+Composition: volcanic cone on the left, sunset and sea of clouds on the right. More landscape detail than the minimal dusk alternative. Suggested object-position: 50% 58%.
+
+Alternative hero: teide-hires.jpg
+Dimensions: 3200 x 2133; JPEG 300540 bytes
+Photographer: Quick PS (@quickps)
+Source: https://unsplash.com/photos/the-sun-is-setting-behind-a-mountain-peak-xy-XbcdU4Ec
+Download: https://images.unsplash.com/photo-1690532582919-5e5c943327c3?fit=max&fm=jpg&q=88&w=3200
+Location: El Teide, Spain
+Composition: dark silhouette, orange horizon, large deep-blue negative space. Useful when title contrast is paramount. Suggested object-position: 50% 58%.
+
+masca-hires.jpg
+Dimensions: 3000 x 2000; JPEG 1072641 bytes
+Photographer: Luis
+Source: https://unsplash.com/photos/a-scenic-view-of-a-mountain-with-a-village-in-the-foreground-i5txLAUpQRs
+Download: https://images.unsplash.com/photo-1645438858480-78b5cdc35071?fit=max&fm=jpg&q=88&w=3000
+Location: Masca, Spain
+Suggested object-position: 42% 58% to keep the hamlet and central spire visible.
+
+coast-hires.jpg
+Dimensions: 2943 x 3521; JPEG 2904189 bytes
+Photographer: Dave Ruck
+Source: https://unsplash.com/photos/brown-rock-formation-in-body-of-water-hrRqd0IlZmk
+Download: https://images.unsplash.com/photo-1555431206-5c9e90b9b963?fit=max&fm=jpg&q=88&w=3000
+Location: Playa de Benijo, Santa Cruz, Spain
+Suggested object-position: 50% 58%; portrait composition, but enough native horizontal detail for a wide crop.
+
+ocean-hires.jpg
+Dimensions: 3000 x 2000; JPEG 899827 bytes
+Photographer: Maksim Shutov (@maksimshutov)
+Source: https://unsplash.com/photos/a-boat-in-the-water-by-a-cliff-d_kHKUGn-rE
+Download: https://images.unsplash.com/photo-1662291457059-b907f2d1d141?fit=max&fm=jpg&q=88&w=3000
+Location: Tenerife, Spain
+Suggested object-position: 55% 60%; sea surface, vessels and cliffs.
+
+License for every photo: Unsplash License
+License URL: https://unsplash.com/license
+Verified: 2026-09-30. The source pages say free to use under the Unsplash License. Attribution is included here for traceability.
+
+Responsive derivatives downloaded from the same observed CDN sources, using fm=webp&q=90&fit=max&w=1600 or w=3000 (format and bounded size only; no creative edit):
+teide-photo-1600.webp: 1600 x 1067, 149636 bytes; Gretchen Albers source above.
+teide-photo-3000.webp: 3000 x 2000, 496396 bytes; Gretchen Albers source above.
+masca-photo-1600.webp: 1600 x 1067, 330466 bytes.
+masca-photo-3000.webp: 3000 x 2000, 1018500 bytes.
+coast-photo-1600.webp: 1600 x 1914, 1047406 bytes.
+coast-photo-3000.webp: 2943 x 3521, 3689110 bytes. Native width retained without upscaling.
+ocean-photo-1600.webp: 1600 x 1066, 281582 bytes.
+ocean-photo-3000.webp: 3000 x 2000, 841046 bytes.
+

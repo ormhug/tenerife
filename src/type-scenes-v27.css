@@ -1,0 +1,180 @@
+/* Expressive Cyrillic display type, photographic grain and four island palettes. */
+
+:root {
+  --photo-grain: url('assets/fine-grain.png');
+}
+
+/* A naturally narrow poster face lets the question fill its photo-height column. */
+.hero-brief .brief-lead {translate: none;}
+.hero-brief .brief-title {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 0;
+  min-height: 0;
+  margin: 0;
+  font-family: 'Oswald', 'Arial Narrow', Onest, sans-serif;
+  font-size: clamp(116px, 11.7vw, 158px);
+  font-weight: 700;
+  font-synthesis: none;
+  line-height: .88;
+  letter-spacing: -.047em;
+  text-wrap: nowrap;
+  color: #373838;
+  scale: 1 1.25;
+  transform-origin: left center;
+}
+.hero-brief .brief-title-line {
+  flex: 0 0 auto;
+  padding-block: .20em .25em;
+  margin-block: -.20em -.25em;
+  line-height: .88;
+}
+.hero-brief .brief-title-line:first-child {font-size: .86em;}
+.hero-brief .brief-title-line:nth-child(2) {margin-top: -.34em;margin-bottom: -.30em;}
+.hero-brief .brief-title-line:nth-child(3) {color: #b36244;}
+.hero-brief .brief-title-line > span {white-space: nowrap;}
+html[lang='es'] .hero-brief .brief-title-line:first-child {font-size: .76em;}
+html[lang='es'] .hero-brief .brief-title-line:nth-child(2) {margin-top: -.12em;}
+html[lang='en'] .hero-brief .brief-title-line:nth-child(2) {margin-top: -.20em;margin-bottom: -.12em;}
+
+.island-editorial {
+  --island-paper: #eeeeee;
+  --island-ink: #363737;
+  --island-blue: #6e6f70;
+  --island-sun: #edcdc2;
+}
+.island-editorial .chapter-teide {
+  --scene-accent: #edc5b7;
+  --scene-text: #ececec;
+  --scene-ink: #3b3c3c;
+  --scene-shadow: #2b2b2c;
+  --scene-wash: #e9ab9516;
+}
+.island-editorial .chapter-coast {
+  --scene-accent: #d1d2d2;
+  --scene-text: #e8e9e9;
+  --scene-ink: #3b3c3c;
+  --scene-shadow: #2b2c2c;
+  --scene-wash: #d1d2d219;
+}
+.island-editorial .chapter-masca {
+  --scene-accent: #d4d5d5;
+  --scene-text: #f0f1f1;
+  --scene-ink: #434445;
+  --scene-shadow: #2f3031;
+  --scene-wash: #d4d5d51b;
+}
+.island-editorial .chapter-ocean {
+  --scene-accent: #d9dadb;
+  --scene-text: #f3f3f3;
+  --scene-ink: #424344;
+  --scene-shadow: #2f3030;
+  --scene-wash: #d9dadb20;
+}
+
+.island-editorial .chapter-shade {
+  background:
+    linear-gradient(var(--scene-wash), var(--scene-wash)),
+    linear-gradient(180deg, #27282859 0%, #27282822 24%, #27282863 49%, #27282846 75%, #2728288a 100%);
+  background:
+    linear-gradient(var(--scene-wash), var(--scene-wash)),
+    linear-gradient(180deg,
+      color-mix(in srgb, var(--scene-shadow) 40%, transparent) 0%,
+      color-mix(in srgb, var(--scene-shadow) 16%, transparent) 24%,
+      color-mix(in srgb, var(--scene-shadow) 46%, transparent) 49%,
+      color-mix(in srgb, var(--scene-shadow) 34%, transparent) 75%,
+      color-mix(in srgb, var(--scene-shadow) 57%, transparent) 100%);
+}
+.island-editorial .chapter-photo {filter: saturate(.76) contrast(.96) brightness(1.025);}
+.island-editorial .chapter-teide .chapter-photo {filter: saturate(.74) contrast(.96) sepia(.08);}
+.island-editorial .chapter-ocean .chapter-photo {filter: saturate(.63) contrast(.96) sepia(.08);}
+.island-editorial .chapter-name {
+  font-family: 'Unbounded', Onest, sans-serif;
+  font-size: clamp(61px, 7vw, 104px);
+  font-weight: 400;
+  font-synthesis: none;
+  letter-spacing: -.035em;
+  line-height: 1.04;
+  width: min(100%, 19ch);
+  color: var(--scene-text);
+  text-shadow: 0 3px 30px #28282880;
+}
+.island-editorial .chapter-description p,
+.island-editorial .chapter-caption {
+  color: var(--scene-text);
+  text-shadow: 0 2px 16px #28282899;
+}
+.island-editorial .chapter-caption {opacity: 1;}
+.island-editorial .chapter-order,
+.island-editorial .chapter-book.button {
+  background: var(--scene-accent);
+  border-color: var(--scene-accent);
+  color: var(--scene-ink);
+}
+.island-editorial .chapter-book.button {
+  border-radius: 3px;
+  box-shadow: 0 6px 25px #23242414;
+}
+.island-editorial .chapter-book.button:hover {
+  background: color-mix(in srgb, var(--scene-accent) 84%, #ffffff);
+  border-color: color-mix(in srgb, var(--scene-accent) 84%, #ffffff);
+}
+.island-editorial .chapter-book.button:focus-visible {outline-color: var(--scene-text);}
+.island-editorial .chapter-tracker {background: #edeeee38;}
+.island-editorial .chapter-tracker i {background: var(--scene-accent);}
+.island-pinned .island-chapters {background: #2f3030;}
+
+/* Grain belongs to the photograph, so it moves and wipes with its scene. */
+.chapter-image::after,
+.photo-window .photo-slide::after,
+.experience-grid .card-art::before,
+.hero-backdrop::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background-image: var(--photo-grain);
+  background-size: 160px 160px;
+  background-repeat: repeat;
+  opacity: .075;
+}
+/* A slide keeps its own grain below its glass caption both while translating
+   and at rest. A viewport overlay jumps above captions when slides animate. */
+.photo-window .photo-slide {isolation: isolate;}
+.photo-window .photo-caption {z-index: 2;}
+.experience-grid .card-art::before {z-index: 1;}
+.experience-grid .category-tag,
+.experience-grid .illustration-tag {z-index: 2;}
+.photo-window .widget-photo {filter: saturate(.77) contrast(.97) sepia(.055);}
+.photo-caption strong {font-family: 'Unbounded', Onest, sans-serif;font-weight: 400;font-synthesis: none;letter-spacing: -.035em;}
+
+@media (max-width: 1100px) {
+  .hero-brief .brief-title {font-size: clamp(100px, 11.3vw, 126px);min-height: 0;}
+}
+@media (max-width: 900px) {
+  .hero-brief .brief-lead {translate: none;}
+  .hero-brief .brief-title {font-size: clamp(92px, 15vw, 130px);min-height: 0;scale: none;}
+}
+@media (max-width: 760px) {
+  .island-editorial .chapter-name {font-size: clamp(39px, 8.7vw, 67px);line-height: 1.08;letter-spacing: -.035em;width: min(100%, 18ch);}
+}
+@media (max-width: 520px) {
+  .hero-brief .brief-title {font-size: clamp(60px, 17.2vw, 90px);line-height: .88;min-height: 0;}
+  .hero-brief .brief-title-line {line-height: .88;}
+}
+@media (max-width: 760px) and (max-height: 700px) {
+  .island-editorial .chapter-name {font-size: clamp(36px, 8.4vw, 60px);}
+}
+@media print {
+  .hero-brief .brief-lead {translate: none;}
+  .hero-brief .brief-title {font-size: 44px;min-height: 0;scale: none;}
+  .island-editorial .chapter-name {font-size: 36px;color: #363737;text-shadow: none;}
+  .island-editorial .chapter-description p,
+  .island-editorial .chapter-caption {color: #363737;text-shadow: none;}
+  .chapter-image::after,
+  .photo-window::after,
+  .experience-grid .card-art::before,
+  .hero-backdrop::after {display: none;}
+}

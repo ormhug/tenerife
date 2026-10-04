@@ -1,0 +1,18 @@
+# Local backups and generated release archives stay off Git history.
+/backups/
+/releases/
+/.video-review/
+/*.jpg
+/*.png
+/dist/preview.html
+
+# Local tools, caches and credentials.
+.env
+.env.*
+!.env.example
+__pycache__/
+*.pyc
+node_modules/
+.venv/
+.DS_Store
+Thumbs.db

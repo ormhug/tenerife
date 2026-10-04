@@ -1,0 +1,49 @@
+@font-face {
+  font-family: 'Onest';
+  src: url('assets/fonts/onest.woff2') format('woff2');
+  font-style: normal;
+  font-weight: 300 750;
+  font-display: swap;
+}
+
+.hero-discover {font-size: 12px;}
+
+/* Neutral glass leads into a photograph that opens out as it enters the screen. */
+.brief-strip {display: block;width: 100%;margin: 0;padding: 96px 0 76px;background: #f2f2f2;color: #202020;isolation: isolate;overflow: clip;}
+.brief-strip::before {inset: 0;width: 100%;opacity: 1;background: linear-gradient(180deg,#f8f9f9,#ebecec 50%,#f8f9f9);}
+.brief-strip::after {inset: 0;width: 100%;opacity: .035;z-index: 4;}
+.benefit-grid {display: grid;grid-template-columns: repeat(3,minmax(0,1fr));gap: 20px;position: relative;}
+.brief-strip .glass-benefit {min-height: 372px;display: flex;flex-direction: column;justify-content: space-between;gap: 48px;padding: 30px 30px 32px;border-radius: 0;border: 1px solid #ffffffbf;background: linear-gradient(120deg,#ffffff7d,#fafafa26);backdrop-filter: blur(26px) saturate(.8);-webkit-backdrop-filter: blur(26px) saturate(.8);box-shadow: 0 18px 55px -35px #46484944,inset 0 1px #ffffff66;color: #202020;transition: none;translate: none;}
+.brief-strip .glass-benefit:hover {background: linear-gradient(120deg,#ffffff7d,#fafafa26);border-color: #ffffffbf;box-shadow: 0 18px 55px -35px #46484944,inset 0 1px #ffffff66;translate: none;}
+.benefit-number {font-family: 'Onest',Manrope,sans-serif;font-size: 13px;font-weight: 400;letter-spacing: .12em;color: #707171;}
+.brief-strip .glass-benefit h2 {font-family: 'Onest',Manrope,sans-serif;font-size: clamp(27px,2.7vw,42px);line-height: 1.08;font-weight: 450;letter-spacing: -.055em;margin-bottom: 24px;text-wrap: balance;}
+.brief-strip .glass-benefit p {font-family: 'Onest',Manrope,sans-serif;font-size: 15px;line-height: 1.7;letter-spacing: -.012em;color: #5a5b5b;max-width: 29ch;}
+.benefit-rule {height: 1px;width: 100%;background: #72727236;transform-origin: left;}
+.story-ready .glass-benefit {opacity: var(--benefit-progress,0);transform: translate3d(0,calc((1 - var(--benefit-progress,0)) * 76px),0);}
+.story-ready .benefit-rule {transform: scaleX(var(--benefit-progress,0));}
+.island-editorial {background: #f8f9f9;}
+.story-ready .island-chapters {opacity: calc(.18 + var(--island-entry,1) * .82);transform: scale(calc(.965 + var(--island-entry,1) * .035));transform-origin: center top;}
+.services-kicker {display: block;font: 500 12px/1.4 'Onest',Manrope,sans-serif;letter-spacing: .08em;text-transform: uppercase;margin-bottom: 22px;color: #5d5e5e;}
+@media (max-width:1100px) {
+ .brief-strip {padding: 76px 0 64px;}
+ .benefit-grid {gap: 14px;}
+ .brief-strip .glass-benefit {padding: 26px 25px;min-height: 352px;gap: 40px;}
+ .brief-strip .glass-benefit h2 {font-size: 31px;}
+ .brief-strip .glass-benefit p {font-size: 14px;}
+}
+@media (max-width:760px) {
+ .brief-strip {padding: 66px 0 56px;}
+ .benefit-grid {grid-template-columns: minmax(0,1fr);gap: 16px;}
+ .brief-strip .glass-benefit {min-height: 290px;padding: 28px;gap: 30px;}
+ .brief-strip .glass-benefit h2 {font-size: 37px;margin-bottom: 20px;}
+ .brief-strip .glass-benefit p {font-size: 15px;max-width: 34ch;}
+}
+.motion-off .glass-benefit,.motion-off .benefit-rule,.motion-off .island-chapters {opacity: 1!important;transform: none!important;}
+@media (prefers-reduced-motion:reduce) {
+ .story-ready .glass-benefit,.story-ready .benefit-rule,.story-ready .island-chapters {opacity: 1;transform: none;}
+}
+@media print {
+ .glass-benefit,.island-chapters {opacity: 1!important;transform: none!important;}
+ .brief-strip {background: white;padding: 24px 0;}
+ .brief-strip .glass-benefit {background: white;box-shadow: none;backdrop-filter: none;border: 1px solid #999999;}
+}

@@ -1,0 +1,243 @@
+/* One photograph contracts into a destination widget, then the four widgets
+   gather into a gallery. Geometry and opacity follow scroll without timers. */
+.chapter-visual {
+  position: absolute;
+  inset: 0;
+  z-index: -3;
+  isolation: isolate;
+  overflow: clip;
+}
+
+html.island-pinned #island .island-sequence {
+  position: relative;
+  height: calc(var(--scene-height) + var(--scene-step) * var(--scene-units, 7.4));
+  overflow: visible;
+}
+html.island-pinned #island .island-chapters {
+  position: sticky;
+  top: var(--scene-top);
+  height: var(--scene-height);
+  background: var(--stone-1);
+  opacity: 1;
+  transform: none;
+  isolation: isolate;
+  overflow: clip;
+}
+html.island-pinned #island .island-chapter {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  isolation: auto;
+  z-index: auto;
+  opacity: 1;
+  transform: none;
+  overflow: visible;
+  pointer-events: none;
+  will-change: auto;
+}
+html.island-pinned #island .island-chapter::after {display: none;}
+html.island-pinned #island .chapter-visual {
+  /* Keep changing photo dimensions local to this clipped, absolute widget. */
+  contain: layout paint;
+  inset: auto;
+  left: 0;
+  top: 0;
+  width: var(--widget-w, 100%);
+  height: var(--widget-h, 100%);
+  border-radius: var(--widget-r, 0px);
+  transform: translate3d(var(--widget-x, 0px), var(--widget-y, 0px), 0);
+  z-index: var(--widget-layer, 0);
+  opacity: var(--widget-alpha, 0);
+  overflow: hidden;
+  pointer-events: none;
+  clip-path: none;
+}
+html.island-pinned #island .chapter-image,
+html.island-pinned #island .chapter-shade {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  clip-path: none;
+  transform: none;
+}
+html.island-pinned #island .chapter-image {z-index: 0;}
+html.island-pinned #island .chapter-shade {z-index: 1;opacity: var(--widget-shade, 0);}
+html.island-pinned #island .chapter-photo {transform: scale(1.025);}
+html.island-pinned #island .chapter-visual::after {display: none;}
+html.island-pinned #island .chapter-body {
+  position: absolute;
+  inset: auto;
+  left: 0;
+  top: 0;
+  width: var(--copy-w, 100%);
+  height: var(--copy-h, 100%);
+  min-height: 0;
+  padding: 0;
+  transform: translate3d(calc(var(--copy-x, 0px) + var(--copy-shift-x, 0px)), calc(var(--copy-y, 0px) + var(--copy-shift, 0px)), 0);
+  opacity: var(--copy-alpha, 0);
+  transition: none;
+  z-index: 6;
+  pointer-events: none;
+}
+html.island-pinned #island .island-chapter:not([inert]) .chapter-body {pointer-events: auto;}
+html.island-pinned #island .offer-title-text {opacity: 1;transform: none;}
+html.island-pinned #island .chapter-body > * {flex-shrink: 0;}
+html.island-pinned #island .chapter-top {display: none;}
+
+/* The opening uses the existing white, centred landscape typography. */
+html.island-pinned #island .is-widget .chapter-body {
+  align-items: flex-start;
+  justify-content: center;
+  color: var(--ink);
+  text-align: left;
+}
+html.island-pinned #island .is-widget .chapter-name {
+  width: 100%;
+  max-width: 100%;
+  margin: 0 0 22px;
+  font-size: clamp(30px, 3.1vw, 46px);
+  line-height: 1.12;
+  letter-spacing: -.045em;
+  color: var(--ink);
+  text-align: left;
+  text-shadow: none;
+  white-space: normal;
+  text-wrap: balance;
+}
+html.island-pinned #island .is-widget .chapter-bottom {
+  width: 100%;
+  align-items: flex-start;
+  gap: 26px;
+  text-align: left;
+}
+html.island-pinned #island .is-widget .chapter-description p {
+  max-width: 40ch;
+  margin: 0;
+  font: 400 clamp(16px, 1.35vw, 18px)/1.55 Onest, sans-serif;
+  color: var(--ink-soft);
+  text-shadow: none;
+}
+html.island-pinned #island .is-widget .chapter-choice {width: min(100%, 350px);margin: 0;}
+html.island-pinned #island .is-widget .chapter-book.button {
+  min-height: 52px;
+  margin: 0;
+  background: rgba(247, 248, 248, .36) !important;
+  border: 1px solid rgba(29, 33, 36, .4) !important;
+  color: var(--ink) !important;
+  box-shadow: none !important;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  text-shadow: none;
+}
+html.island-pinned #island .is-widget .chapter-book.button:hover {
+  background: rgba(247, 248, 248, .8) !important;
+  border-color: var(--ink) !important;
+}
+html.island-pinned #island .is-widget .chapter-book.button:focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 5px;
+}
+html.island-pinned #island .scene-narrow .is-widget .chapter-name {font-size: 28px;margin-bottom: 14px;line-height: 1.14;}
+html.island-pinned #island .scene-narrow .is-widget .chapter-bottom {gap: 18px;}
+html.island-pinned #island .scene-narrow .is-widget .chapter-description p {font-size: 16px;line-height: 1.45;}
+
+.scene-gallery {display: none;}
+.scene-gallery-photo {display: none;}
+html.island-pinned #island .scene-gallery {
+  position: absolute;
+  inset: 0;
+  display: block;
+  z-index: 10;
+  opacity: var(--gallery-alpha, 0);
+  pointer-events: none;
+}
+html.island-pinned #island .scene-gallery-title {
+  position: absolute;
+  top: 24px;
+  left: max(38px, 4.5vw);
+  margin: 0;
+  color: var(--ink);
+  font: 600 clamp(24px, 2.6vw, 34px)/1.16 var(--display);
+  letter-spacing: -.04em;
+}
+html.island-pinned #island .scene-gallery-link {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: var(--gallery-w);
+  height: var(--gallery-h);
+  min-height: 44px;
+  transform: translate3d(var(--gallery-x), var(--gallery-y), 0);
+  display: flex;
+  align-items: flex-end;
+  gap: 16px;
+  padding: clamp(14px, 1.6vw, 24px);
+  border-radius: var(--r-surface);
+  color: #f7f8f8;
+  background: linear-gradient(180deg, transparent 38%, rgba(15, 22, 26, .76));
+  text-decoration: none;
+  pointer-events: auto;
+}
+html.island-pinned #island .scene-gallery-link > span {
+  flex: 1;
+  min-width: 0;
+  overflow-wrap: anywhere;
+  font: 600 clamp(16px, 1.65vw, 24px)/1.22 var(--display);
+  letter-spacing: -.035em;
+  text-wrap: balance;
+  text-shadow: 0 1px 10px #0004;
+}
+html.island-pinned #island .scene-gallery-link > svg {width: 22px;height: 22px;flex: 0 0 22px;}
+html.island-pinned #island .scene-gallery-link:hover {background: linear-gradient(180deg, transparent 20%, rgba(15, 22, 26, .86));}
+html.island-pinned #island .scene-gallery-link:focus-visible {outline: 3px solid var(--lava);outline-offset: 5px;}
+html.island-pinned #island .scene-gallery[inert] .scene-gallery-link {pointer-events: none;}
+html.island-pinned #island .scene-narrow .scene-gallery-title {left: 22px;}
+@media (max-width: 600px) {
+  html.island-pinned #island .scene-narrow .is-widget .chapter-name {font-size:clamp(23px,6.4vw,28px);line-height:1.15;margin-bottom:12px;}
+  html.island-pinned #island .scene-narrow .is-widget .chapter-bottom {gap:14px;}
+  html.island-pinned #island .scene-narrow .is-widget .chapter-description p {font-size:15px;line-height:1.45;}
+  html.island-pinned #island .scene-narrow .is-widget .chapter-book.button {min-height:46px;padding:10px 14px;font-size:13px;}
+  html.island-pinned #island .scene-gallery-link {gap: 8px;padding: 12px;}
+  html.island-pinned #island .scene-gallery-link > span {font-size: 14px;line-height: 1.25;}
+  html.island-pinned #island .scene-gallery-link > svg {display: none;}
+  html.island-pinned #island .scene-gallery-title {font-size: 24px;}
+}
+@media (max-width: 380px) {
+  html.island-pinned #island .scene-narrow .is-widget .chapter-name {font-size: 23px;}
+}
+@media (max-width: 760px), (pointer: coarse) {
+  /* A transparent tint keeps the phone action readable without rerasterising
+     a backdrop blur for every changing photograph dimension. */
+  #island .chapter-book.button {backdrop-filter:none;-webkit-backdrop-filter:none;}
+  html.island-pinned #island .chapter-photo {transform:none;}
+  html.island-pinned #island .island-sequence {overflow-anchor:none;}
+}
+/* Fixed phone surfaces: only opacity changes while swiping. Promote the small
+   photo surfaces, not the whole long sequence, and omit live photo filters. */
+html.island-mobile-motion.island-pinned #island .chapter-visual {will-change: opacity;}
+html.island-mobile-motion.island-pinned #island .chapter-photo {filter: none;transform: none;}
+html.island-mobile-motion.island-pinned #island .chapter-image::after {display: none;}
+html.island-mobile-motion.island-pinned #island .chapter-body {will-change: opacity;}
+html.island-mobile-motion.island-pinned #island .scene-gallery {will-change: opacity;}
+html.island-mobile-motion.island-pinned #island .scene-gallery-link {isolation: isolate;overflow: hidden;}
+html.island-mobile-motion.island-pinned #island .scene-gallery-photo {
+  display: block;position: absolute;inset: 0;width: 100%;height: 100%;
+  object-fit: cover;z-index: -2;
+}
+html.island-mobile-motion.island-pinned #island .scene-gallery-link::after {
+  content: '';position: absolute;inset: 0;z-index: -1;background: inherit;pointer-events: none;
+}
+@media print {
+  .chapter-visual, .scene-gallery {display: none !important;}
+  html.island-pinned #island .island-sequence {height: auto;}
+  html.island-pinned #island .island-chapters {position: static;height: auto;overflow: visible;}
+  html.island-pinned #island .island-chapter {position: relative;height: auto;color: black;}
+  html.island-pinned #island .chapter-body {position: relative;width: 100%;height: auto;padding: 20px 0;opacity: 1;transform: none;}
+}

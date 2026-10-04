@@ -1,0 +1,8 @@
+/* The caption travels with its slide as one painted surface. Live backdrop
+   sampling inside the tilted, clipped photo could redraw in separate tiles. */
+.photo-window .photo-slide .photo-caption {
+  background: rgba(236, 238, 238, .85);
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
+  transform: none;
+}

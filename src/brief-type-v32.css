@@ -1,0 +1,70 @@
+/* A single conversational prompt leads into the destination, beside the photo. */
+@font-face {
+  font-family: 'Unbounded';
+  src: url('assets/fonts/unbounded.woff2') format('woff2');
+  font-style: normal;
+  font-weight: 300 800;
+  font-display: swap;
+}
+
+.hero-brief .brief-top {align-items:center;}
+.hero-brief .brief-lead {align-self:center;translate:none;}
+.hero-brief .brief-title {
+  display:grid;
+  grid-template-columns:max-content minmax(0,1fr);
+  align-items:baseline;
+  justify-content:start;
+  gap:.18em .12em;
+  min-height:0;
+  margin:0;
+  font-family:'Unbounded',Onest,sans-serif;
+  font-size:clamp(68px,7vw,94px);
+  font-weight:650;
+  font-synthesis:none;
+  line-height:1.14;
+  letter-spacing:-.04em;
+  color:#373838;
+  text-wrap:nowrap;
+  scale:none;
+}
+.hero-brief .brief-title .brief-title-line {
+  padding:.08em 0 .14em;
+  margin:0;
+  overflow:visible;
+  line-height:1.2;
+}
+html[lang] .hero-brief .brief-title .brief-title-line {margin:0;}
+.hero-brief .brief-title .brief-title-line:is(:first-child,:nth-child(2)) {
+  font-size:.44em;
+  font-weight:500;
+  letter-spacing:-.025em;
+  color:#373838;
+}
+.hero-brief .brief-title .brief-title-line:nth-child(3) {
+  grid-column:1 / -1;
+  font-size:1em;
+  line-height:1.14;
+  padding-top:0;
+  color:#b36244;
+}
+.hero-brief .brief-title-line > span {white-space:nowrap;}
+html[lang='es'] .hero-brief .brief-title .brief-title-line:is(:first-child,:nth-child(2)) {font-size:.36em;}
+html[lang='en'] .hero-brief .brief-title .brief-title-line:is(:first-child,:nth-child(2)) {font-size:.4em;}
+
+@media(max-width:1100px) {
+  .hero-brief .brief-title {font-size:clamp(58px,6.9vw,77px);}
+}
+@media(max-width:900px) {
+  .hero-brief .brief-lead {width:min(100%,640px);justify-self:center;}
+  .hero-brief .brief-title {font-size:clamp(56px,10vw,86px);}
+}
+@media(max-width:520px) {
+  .hero-brief .brief-top {gap:30px;}
+  .hero-brief .brief-title {font-size:clamp(38px,10.6vw,54px);gap:.15em .12em;}
+  .hero-brief .brief-title .brief-title-line:is(:first-child,:nth-child(2)) {font-size:.49em;}
+  html[lang='es'] .hero-brief .brief-title .brief-title-line:is(:first-child,:nth-child(2)) {font-size:.4em;}
+  html[lang='en'] .hero-brief .brief-title .brief-title-line:is(:first-child,:nth-child(2)) {font-size:.43em;}
+}
+@media print {
+  .hero-brief .brief-title {font-size:42px;}
+}

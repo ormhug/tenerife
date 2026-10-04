@@ -1,0 +1,144 @@
+/* Compact reading scale and stable card surfaces on narrow screens. */
+@media (max-width: 760px) {
+  #how {padding-block: 54px 38px;}
+  #how > .section-heading {margin-bottom: 24px;}
+  #how #how-title,
+  #services .section-heading h2 {
+    max-width: 100%;
+    font-size: clamp(30px, 8vw, 42px);
+    line-height: 1.14;
+    letter-spacing: -.045em;
+  }
+  #how :is(.steps, .process-grid) {gap: 14px;}
+  #how :is(.step, .process-card) {
+    min-height: 0;
+    padding: 154px 20px 20px;
+    background: #eceeef;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
+  #how :is(.step, .process-card)::before,
+  #how.journey-motion-ready .step::before {
+    top: 0;
+    height: 132px;
+    transform: none;
+  }
+  #how :is(.step-number, .process-number) {
+    top: 14px;
+    left: 16px;
+    width: 48px;
+    height: 48px;
+    background: #f7f8f8e6;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    font-size: 34px;
+    letter-spacing: -.04em;
+  }
+  #how :is(.step, .process-card) h3 {
+    max-width: none;
+    margin-bottom: 12px;
+    font-size: clamp(23px, 6.4vw, 26px);
+    line-height: 1.2;
+    letter-spacing: -.035em;
+  }
+  #how :is(.step, .process-card) p {
+    max-width: none;
+    font-size: 15px;
+    line-height: 1.55;
+  }
+  #how.journey-motion-ready .step :is(h3, p, .step-number) {
+    translate: none;
+    scale: none;
+    opacity: 1;
+  }
+  #how .journey-step-meter {top: 132px;transform: none;}
+  #how .journey-step-open {
+    min-height: 44px;
+    margin-top: 12px;
+    padding-top: 10px;
+    font-size: 14px;
+  }
+  .js :is(#how, #booking) .reveal.is-visible {animation: none;}
+  #how .about-panel {
+    gap: 22px;
+    margin-top: 18px;
+    padding: 22px 20px;
+    background: #e3e5e6;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
+  #how .about-panel h3 {margin-bottom: 12px;font-size: 23px;line-height: 1.25;}
+  #how .about-panel p {font-size: 15px;line-height: 1.55;}
+  #how .about-links {gap: 12px;}
+  #how .about-links .button {min-height: 48px;padding: 12px 14px;font-size: 14px;}
+  #how .about-links .text-link {display: inline-flex;align-items: center;min-height: 44px;}
+
+  #booking {gap: 28px;padding-block: 46px 56px;}
+  #booking #booking-title {
+    max-width: 18ch;
+    margin-bottom: 20px;
+    font-size: clamp(32px, 8vw, 44px);
+    line-height: 1.12;
+    letter-spacing: -.045em;
+  }
+  #booking .booking-copy > p {margin-bottom: 22px;font-size: 15px;line-height: 1.6;}
+  #booking .phone {font-size: clamp(25px, 6.5vw, 30px);white-space: nowrap;}
+  #booking .inquiry-form {
+    min-width: 0;
+    padding: 22px 20px;
+    background: #eef0f1;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
+  #booking .booking-form-intro {margin-bottom: 22px;}
+  #booking .booking-form-title {font-size: 22px;line-height: 1.25;}
+  #booking .inquiry-form label {font-size: 14px;}
+  #booking .inquiry-form :is(input, select, textarea) {min-height: 48px;padding: 11px 12px;font-size: 16px;}
+  #booking .inquiry-form textarea {min-height: 106px;}
+  #booking .inquiry-summary {margin-block: 18px 16px;padding: 14px;}
+  #booking .inquiry-summary strong {font-size: 15px;line-height: 1.45;}
+  #booking .inquiry-form > .button {min-height: 52px;font-size: 15px;}
+  #booking .form-note {font-size: 12px;line-height: 1.6;}
+  #how :is(.step, .process-card)::after,
+  #how .about-panel::after,
+  #booking .inquiry-form::after {opacity: .025;mix-blend-mode: normal;}
+
+  .brief-strip .benefit-grid {grid-template-columns: minmax(0, 1fr);}
+  .brief-strip .glass-benefit {min-width: 0;gap: 18px;padding: 22px 20px;backdrop-filter: none;-webkit-backdrop-filter: none;}
+  .brief-strip .glass-benefit > div {min-width: 0;}
+  .story-ready .glass-benefit {opacity: 1;transform: none;}
+  .story-ready .island-chapters {opacity: 1;transform: none;}
+  .brief-strip .glass-benefit:nth-child(1) {min-height: 270px !important;}
+  .brief-strip .glass-benefit:nth-child(1) h2 {font-size: clamp(24px, 7.5vw, 29px);line-height: 1.15;overflow-wrap: anywhere;}
+  .brief-strip .glass-benefit:nth-child(n+2) h2 {font-size: 23px;line-height: 1.2;}
+  .brief-strip .glass-benefit h2 {margin-bottom: 12px;}
+  .brief-strip .glass-benefit p,
+  .brief-strip .glass-benefit:nth-child(1) p {font-size: 15px;line-height: 1.55;}
+  .brief-strip .benefit-open {min-height: 44px;padding-top: 11px;}
+
+  .journey-detail {max-height: calc(100svh - 24px);}
+  .journey-detail-image {height: 140px;}
+  .journey-detail-body {padding: 22px 20px;}
+  .journey-detail-title {font-size: 23px;line-height: 1.25;}
+  .site-footer {padding-block: 30px max(72px, env(safe-area-inset-bottom));}
+  .site-footer .photo-credits summary {min-height: 44px;}
+  .floating-wa {right: 16px;bottom: max(16px, env(safe-area-inset-bottom));min-width: 48px;min-height: 48px;}
+}
+
+@media (max-width: 560px) {
+  #booking .form-row,
+  .experience-config .form-row {grid-template-columns: minmax(0, 1fr);gap: 16px;}
+  #booking .inquiry-form label .field-hint {display: inline;margin-left: 6px;}
+}
+
+/* Avoid nested live blurs while a phone is scrolling the underlying page. */
+@media (max-width: 760px) and (pointer: coarse) {
+  .benefit-choice-copy,
+  .benefit-picker .benefit-picker-help,
+  .benefit-picker .benefit-picker-close,
+  .playlist-panel-cover,
+  .playlist-panel-close,
+  .journey-detail-close {backdrop-filter: none;-webkit-backdrop-filter: none;}
+  .benefit-picker,
+  .journey-detail {backdrop-filter: blur(8px);-webkit-backdrop-filter: blur(8px);}
+}

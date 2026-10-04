@@ -1,0 +1,69 @@
+/* A quiet glass photo viewer beside the oversized travel invitation. */
+.hero-brief {width: min(1360px,100%);}
+.hero-brief .brief-top {grid-template-columns: minmax(0,1fr) minmax(286px,340px);gap: clamp(30px,4vw,64px);padding: 48px clamp(28px,3.5vw,52px);align-items: center;}
+.brief-lead {min-width: 0;}
+.hero-brief .brief-title {font-size: clamp(68px,7.8vw,116px);font-weight: 750;line-height: 1.02;letter-spacing: -.065em;text-wrap: balance;}
+.hero-brief .brief-copy {margin-top: 26px;}
+.hero-brief .hero-summary {font-size: 13px;line-height: 1.5;letter-spacing: 0;font-weight: 500;max-width: none;white-space: nowrap;text-wrap: nowrap;margin: 0 0 24px;color: #646566;}
+.hero-brief .hero-actions {gap: 10px;}
+.hero-brief .hero-actions .button {font-size: 14px;min-height: 49px;padding: 12px 18px;}
+.hero-backdrop {position: absolute;inset: 0;overflow: clip;z-index: -1;pointer-events: none;}
+.hero .brand-line {overflow-x: clip;overflow-y: visible;}
+.brief-strip::before,.brief-strip::after {width: var(--strip-viewport,100vw);left: calc((100% - var(--strip-viewport,100vw)) / 2);}
+
+.photo-widget {width: 100%;min-width: 0;align-self: center;color: #161718;background: transparent;opacity: var(--brief-links,1);translate: 0 calc((1 - var(--brief-links,1)) * 20px);}
+.photo-window {position: relative;isolation: isolate;aspect-ratio: 4 / 4.5;overflow: hidden;background: transparent;border: 1px solid #ffffffb3;box-shadow: 0 18px 40px -22px #23272955,0 0 0 1px #27282912;touch-action: pan-y;cursor: grab;}
+.photo-window.is-dragging {cursor: grabbing;}
+.photo-window {transform: perspective(1000px) rotateX(var(--tilt-x,0deg)) rotateY(var(--tilt-y,0deg)) scale(calc(1 + var(--cursor-light,0) * .012));transform-origin: center;}
+.photo-window .photo-slide {position: absolute;inset: 0;display: block;color: #161718;overflow: hidden;border: 0;border-radius: 0;background: transparent;text-decoration: none;-webkit-user-drag: none;user-select: none;}
+.photo-window .photo-slide[hidden] {display: none;}
+.photo-window .photo-slide:focus-visible {outline: 3px solid #97b9c1;outline-offset: -4px;}
+.widget-photo {display: block;width: 100%;height: 100%;object-fit: cover;object-position: 50% 50%;pointer-events: none;transform: translate3d(var(--photo-pan-x,0px),var(--photo-pan-y,0px),0) scale(1.08);}
+.photo-slide[data-shortcut="tours"] .widget-photo {object-position: 48% 50%;}
+.photo-slide[data-shortcut="road"] .widget-photo {object-position: 55% 50%;}
+.photo-caption {position: absolute;bottom: 12px;left: 12px;right: 12px;display: flex;align-items: center;justify-content: space-between;gap: 12px;min-height: 79px;padding: 20px;background: linear-gradient(120deg,#ffffffb8,#f8f9f97d);backdrop-filter: blur(17px) saturate(.75);-webkit-backdrop-filter: blur(17px) saturate(.75);border: 1px solid #ffffffa6;box-shadow: 0 5px 20px #1a1b1b0d;}
+.photo-caption strong {font-family: 'Bricolage Grotesque',Manrope,sans-serif;font-weight: 650;font-size: 30px;letter-spacing: -.04em;line-height: 1.1;}
+.photo-caption {transform: translate3d(var(--caption-pan-x,0px),var(--caption-pan-y,0px),0);}
+.photo-caption svg {width: 25px;height: 25px;flex: 0 0 auto;transition: translate .25s;}
+.photo-slide:hover .photo-caption svg {translate: 3px 0;}
+.photo-glint {position: absolute;inset: 0;z-index: 3;pointer-events: none;box-shadow: inset 0 0 0 1px #ffffff52;background: linear-gradient(135deg,#ffffff17,transparent 28%,transparent 73%,#ffffff0b);}
+.photo-glint::after {content: '';position: absolute;inset: 0;background: radial-gradient(ellipse 250px 280px at var(--shine-x,50%) var(--shine-y,50%),#ffffff70,transparent 70%);opacity: calc(var(--photo-light,0) * .65);}
+.photo-toolbar {display: flex;align-items: center;gap: 5px;min-height: 52px;padding-top: 7px;}
+.photo-counter {font-size: 11px;font-weight: 500;font-variant-numeric: tabular-nums;white-space: nowrap;color: #595a5b;margin-right: 12px;}
+.photo-pagination {display: flex;flex: 1;min-width: 36px;max-width: 78px;margin-right: auto;}
+.photo-dot {position: relative;flex: 1;min-width: 0;height: 44px;border: 0;padding: 0 3px;background: transparent;cursor: pointer;}
+.photo-dot::before,.photo-dot>span {content: '';position: absolute;left: 3px;right: 3px;top: 21px;height: 2px;background: #2f333530;}
+.photo-dot>span {background: #41474a;transform: scaleX(0);transform-origin: left;}
+.photo-dot[aria-pressed="true"]>span {transform: scaleX(1);}
+.photo-control {display: grid;place-items: center;flex: 0 0 38px;width: 38px;height: 44px;border: 0;background: transparent;color: #2f3335;cursor: pointer;transition: background .2s;}
+.photo-control:hover {background: #41474a0c;}
+.photo-control:disabled {color: #2f333566;cursor: default;}
+.photo-control svg {width: 21px;height: 21px;}
+.photo-pause .play-icon {display: none;}
+.photo-pause[aria-pressed="true"] .pause-icon {display: none;}
+.photo-pause[aria-pressed="true"] .play-icon {display: block;}
+.photo-control:focus-visible,.photo-dot:focus-visible {outline: 2px solid #41474a;outline-offset: 1px;}
+.photo-announcement {position: absolute;width: 1px;height: 1px;padding: 0;margin: -1px;overflow: hidden;clip-path: inset(50%);white-space: nowrap;border: 0;}
+.photo-widget:focus-within {opacity: 1;translate: none;}
+
+@media(max-width:1100px) {
+ .hero-brief .brief-top {grid-template-columns: minmax(0,1fr) 286px;padding: 42px 28px;gap: 30px;}
+ .hero-brief .brief-title {font-size: clamp(64px,7.8vw,86px);}
+ .photo-caption {min-height: 70px;padding: 17px;}.photo-caption strong {font-size: 26px;}.photo-counter {margin-right: 6px;}.photo-control {width: 34px;flex-basis: 34px;}
+}
+@media(max-width:900px) {
+ .hero-brief .brief-top {grid-template-columns: minmax(0,1fr);padding: 36px 26px;gap: 34px;}
+ .hero-brief .brief-title {font-size: clamp(50px,9.3vw,80px);}.hero-brief .brief-copy {margin-top: 22px;}.hero-brief .hero-summary {font-size: 12px;margin-bottom: 20px;}
+ .photo-widget {width: min(100%,380px);justify-self: center;}.photo-window {aspect-ratio: 1 / 1.05;}.photo-caption strong {font-size: 30px;}
+}
+@media(max-width:520px) {
+ .hero-brief .brief-top {padding: 30px 20px;gap: 28px;}.hero-brief .brief-title {font-size: clamp(46px,12.4vw,64px);line-height: 1.06;}.hero-brief .brief-title-line {overflow: hidden;}
+ .hero-brief .hero-summary {font-size: 12px;letter-spacing: -.025em;}.hero-brief .hero-actions .button {font-size: 14px;min-height: 48px;}
+}
+.motion-off .photo-widget {opacity: 1;translate: none;}.motion-off .photo-caption svg,.motion-off .photo-control {transition: none;}
+.motion-off .photo-window,.motion-off .widget-photo,.motion-off .photo-caption {transform: none;}
+.motion-off .photo-glint::after {display: none;}
+@media(hover:none),(pointer:coarse) {.photo-window,.widget-photo,.photo-caption {transform: none;}.photo-glint::after {display: none;}}
+@media(prefers-reduced-motion:reduce) {.photo-window,.widget-photo,.photo-caption {transform: none;}.photo-glint::after {display: none;}}
+@media(prefers-reduced-motion:reduce) {.photo-widget {opacity: 1;translate: none;}.photo-caption svg,.photo-control {transition: none;}}
+@media print {.hero-brief .brief-top {display: block;padding: 20px 0;}.hero-brief .brief-title {font-size: 44px;}.photo-widget {width: 250px;margin-top: 20px;opacity: 1;translate: none;}.photo-toolbar {display: none;}}

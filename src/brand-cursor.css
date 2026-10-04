@@ -1,0 +1,19 @@
+/* White lettering gently yields to the pointer without adding colored hover light. */
+#hero-title .brand-glyph,
+#hero-title .brand-glyph:hover {
+  color: inherit;
+  filter: none;
+  text-shadow: none;
+  transition: none;
+  transform: translate(var(--glyph-x, 0px), var(--glyph-y, 0px))
+    rotate(var(--glyph-rotation, 0deg));
+}
+#hero-title.brand-cursor-moving .brand-glyph { will-change: transform; }
+.brand-flight .flight-word { will-change: auto; }
+.brand-flight .brand-glyph { color: inherit; }
+.brand-cursor-active .cursor-glow { opacity: 0; }
+@media (pointer: coarse), (prefers-reduced-motion: reduce) {
+  #hero-title .brand-glyph { transform: none !important; will-change: auto; }
+}
+.motion-off #hero-title .brand-glyph { transform: none !important; will-change: auto; }
+@media print { #hero-title .brand-glyph { transform: none !important; } }

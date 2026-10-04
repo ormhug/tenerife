@@ -1,0 +1,247 @@
+--- a/src/index.html
++++ b/src/index.html
+@@ -11,7 +11,7 @@
+   root.classList.add('intro');
+   deadline = setTimeout(window.finishTenerifeIntro, 5000);
+ })();
+-</script><link rel="icon" type="image/svg+xml" href="assets/brand.svg"><link rel="stylesheet" href="assets/vendor/lenis-1.3.26/lenis.css"><link rel="stylesheet" href="v3.css"><link rel="stylesheet" href="catalog.css"><link rel="stylesheet" href="catalog-light.css"><link rel="stylesheet" href="island.css"><link rel="stylesheet" href="brief-widget.css?v=2185ff0937"><link rel="stylesheet" href="gallery-large.css"><link rel="stylesheet" href="experience-story.css"><link rel="stylesheet" href="offers.css"><link rel="stylesheet" href="scene-centered.css"><link rel="stylesheet" href="photo-dial.css?v=85c32095ec"><link rel="stylesheet" href="brand-cursor.css?v=e0c0d2eae0"><link rel="stylesheet" href="pastel-v27.css?v=8348061e6e"><link rel="stylesheet" href="type-scenes-v27.css?v=c697794609"><link rel="stylesheet" href="benefit-picker-v27.css"><link rel="stylesheet" href="bottom-pastel-v27.css"><link rel="preload" as="font" href="assets/fonts/bricolage.woff2" type="font/woff2" crossorigin><link rel="preload" as="font" href="assets/fonts/onest.woff2" type="font/woff2" crossorigin><link rel="preload" as="image" href="assets/teide-photo-1600.webp" imagesrcset="assets/teide-photo-900.webp 900w, assets/teide-photo-1600.webp 1600w, assets/teide-photo-3000.webp 3000w" imagesizes="100vw"><script src="locales.js?v=c7a01fcc2c" defer></script><script src="assets/vendor/lenis-1.3.26/lenis.min.js" defer></script><script src="smooth-scroll.js" defer></script><script src="scene-widget-model.js" defer></script><script src="v3.js?v=37a" defer></script><script src="catalog.js?v=ee78575ffb" defer></script><script src="hero-title.js?v=f7edee5c76" defer></script><script src="brand-cursor.js" defer></script><script src="experience-story.js?v=7a5b1e2762" defer></script><script src="brief-carousel.js?v=5f401a246e" defer></script><script src="brief-motion-v31.js?v=162498600d" defer></script><script src="benefit-picker-v27.js" defer></script><script src="playlists-v31.js?v=8e5e1c986a" defer></script><script src="journey-motion-v35.js?v=761e2e1dd6" defer></script><script src="v39.js" defer></script><script src="v40.js" defer></script><link rel="stylesheet" href="brief-motion-v31.css?v=8bb7cafe54"><link rel="stylesheet" href="playlists-v31.css?v=3badb1336b"><link rel="stylesheet" href="brief-type-v32.css?v=e5ed08540f"><link rel="stylesheet" href="playlist-panel-v34.css?v=49bde39633"><link rel="stylesheet" href="island-details-v35.css?v=0a9a1651bc"><link rel="stylesheet" href="services-choice-v35.css?v=77b196a32a"><link rel="stylesheet" href="journey-motion-v35.css?v=473e90687d"><link rel="stylesheet" href="clarity-v38.css"><link rel="stylesheet" href="v39.css"><link rel="stylesheet" href="v40.css"><link rel="stylesheet" href="brief-choice-v41.css"><link rel="stylesheet" href="collection-reveal-v41.css"><link rel="stylesheet" href="scene-glass-v42.css"><link rel="stylesheet" href="benefit-glass-v42.css"><link rel="stylesheet" href="scene-widget-v44.css"><link rel="stylesheet" href="journey-actions-v45.css"><script src="journey-actions-v45.js" defer></script><link rel="stylesheet" href="brief-action-v46.css"><script src="brief-action-v46.js" defer></script><link rel="stylesheet" href="mobile-hero-v53.css"><link rel="stylesheet" href="mobile-cards-v53.css"><link rel="stylesheet" href="photo-caption-v54.css"></head>
++</script><link rel="icon" type="image/svg+xml" href="assets/brand.svg"><link rel="stylesheet" href="assets/vendor/lenis-1.3.26/lenis.css"><link rel="stylesheet" href="v3.css"><link rel="stylesheet" href="catalog.css"><link rel="stylesheet" href="catalog-light.css"><link rel="stylesheet" href="island.css"><link rel="stylesheet" href="brief-widget.css?v=2185ff0937"><link rel="stylesheet" href="gallery-large.css"><link rel="stylesheet" href="experience-story.css"><link rel="stylesheet" href="offers.css"><link rel="stylesheet" href="scene-centered.css"><link rel="stylesheet" href="photo-dial.css?v=85c32095ec"><link rel="stylesheet" href="brand-cursor.css?v=e0c0d2eae0"><link rel="stylesheet" href="pastel-v27.css?v=8348061e6e"><link rel="stylesheet" href="type-scenes-v27.css?v=c697794609"><link rel="stylesheet" href="benefit-picker-v27.css"><link rel="stylesheet" href="bottom-pastel-v27.css"><link rel="preload" as="font" href="assets/fonts/bricolage.woff2" type="font/woff2" crossorigin><link rel="preload" as="font" href="assets/fonts/onest.woff2" type="font/woff2" crossorigin><link rel="preload" as="image" href="assets/teide-photo-1600.webp" imagesrcset="assets/teide-photo-900.webp 900w, assets/teide-photo-1600.webp 1600w, assets/teide-photo-3000.webp 3000w" imagesizes="100vw"><script src="locales.js?v=c7a01fcc2c" defer></script><script src="assets/vendor/lenis-1.3.26/lenis.min.js" defer></script><script src="smooth-scroll.js" defer></script><script src="scene-widget-model.js" defer></script><script src="v3.js?v=37a" defer></script><script src="catalog.js?v=ee78575ffb" defer></script><script src="hero-title.js?v=f7edee5c76" defer></script><script src="brand-cursor.js" defer></script><script src="experience-story.js?v=7a5b1e2762" defer></script><script src="brief-carousel.js?v=5f401a246e" defer></script><script src="brief-motion-v31.js?v=162498600d" defer></script><script src="benefit-picker-v27.js" defer></script><script src="playlists-v31.js?v=8e5e1c986a" defer></script><script src="journey-motion-v35.js?v=761e2e1dd6" defer></script><script src="v39.js" defer></script><script src="v40.js" defer></script><link rel="stylesheet" href="brief-motion-v31.css?v=8bb7cafe54"><link rel="stylesheet" href="playlists-v31.css?v=3badb1336b"><link rel="stylesheet" href="brief-type-v32.css?v=e5ed08540f"><link rel="stylesheet" href="playlist-panel-v34.css?v=49bde39633"><link rel="stylesheet" href="island-details-v35.css?v=0a9a1651bc"><link rel="stylesheet" href="services-choice-v35.css?v=77b196a32a"><link rel="stylesheet" href="journey-motion-v35.css?v=473e90687d"><link rel="stylesheet" href="clarity-v38.css"><link rel="stylesheet" href="v39.css"><link rel="stylesheet" href="v40.css"><link rel="stylesheet" href="brief-choice-v41.css"><link rel="stylesheet" href="collection-reveal-v41.css"><link rel="stylesheet" href="scene-glass-v42.css"><link rel="stylesheet" href="benefit-glass-v42.css"><link rel="stylesheet" href="scene-widget-v44.css"><link rel="stylesheet" href="journey-actions-v45.css"><script src="journey-actions-v45.js" defer></script><link rel="stylesheet" href="brief-action-v46.css"><script src="brief-action-v46.js" defer></script><link rel="stylesheet" href="mobile-hero-v53.css"><link rel="stylesheet" href="mobile-cards-v53.css"><link rel="stylesheet" href="photo-caption-v54.css"><link rel="stylesheet" href="mobile-brand-trial.css"></head>
+ <body><a class="skip-link" href="#main" data-i18n="ui.skip">Перейти к содержимому</a><div class="cursor-glow" aria-hidden="true"></div><div class="page-progress" aria-hidden="true"></div>
+ <header class="site-header"><a class="wordmark" href="#home" aria-label="Tenerife Travel"><span class="header-brand-word">Tenerife</span><span><span class="header-brand-word">Travel</span><i aria-hidden="true"></i></span></a>
+ <nav class="main-nav" id="main-nav" aria-label="Main navigation"><a href="#island" data-i18n="nav.island">Маршруты</a><a href="#services" data-i18n="nav.services">Услуги</a><a href="#how" data-i18n="nav.how">Как заказать</a></nav>
+@@ -20,7 +20,7 @@
+ <main id="main"><section class="hero" id="home" aria-labelledby="hero-title"><div class="hero-backdrop" aria-hidden="true"><div class="hero-orbit" aria-hidden="true"></div><img class="hero-landscape" src="assets/teide-photo-1600.webp" srcset="assets/teide-photo-900.webp 900w, assets/teide-photo-1600.webp 1600w, assets/teide-photo-3000.webp 3000w" sizes="100vw" alt="" width="3000" height="2000" fetchpriority="high" aria-hidden="true"><div class="hero-shade" aria-hidden="true"></div></div><div class="hero-white-field" aria-hidden="true"></div><div class="hero-content">
+ <h1 id="hero-title" aria-label="Tenerife Travel"><span class="brand-line"><span class="brand-reveal"><span class="brand-word" aria-hidden="true"><span class="brand-glyph">T</span><span class="brand-glyph">e</span><span class="brand-glyph">n</span><span class="brand-glyph">e</span><span class="brand-glyph">r</span><span class="brand-glyph">i</span><span class="brand-glyph">f</span><span class="brand-glyph">e</span></span></span></span><span class="brand-line"><span class="brand-reveal"><span class="brand-word" aria-hidden="true"><span class="brand-glyph">T</span><span class="brand-glyph">r</span><span class="brand-glyph">a</span><span class="brand-glyph">v</span><span class="brand-glyph">e</span><span class="brand-glyph">l</span></span><i class="brand-sun" aria-hidden="true"></i></span></span></h1>
+ <section class="hero-brief" aria-labelledby="brief-title"><div class="brief-surface" aria-hidden="true"></div><div class="brief-top"><div class="brief-lead"><h2 class="brief-title" id="brief-title"><span class="brief-title-line"><span data-i18n="brief.titleOne">Каким будет</span></span> <span class="brief-title-line"><span data-i18n="brief.titleTwo">ваш</span></span> <span class="brief-title-line"><span data-i18n="brief.titleThree">Тенерифе?</span></span></h2><div class="brief-next"><a class="brief-go" href="#services" data-shortcut="tours" aria-haspopup="dialog" aria-controls="playlist-panel"><span data-i18n="brief.go">Открыть варианты</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a></div></div>
+-<section class="photo-widget" aria-label="Впечатления Тенерифе" data-i18n-aria="widget.label"><div class="photo-window" id="brief-photo-stage"><a class="photo-slide" href="#services" data-shortcut="tours" data-i18n-aria="filter.tours" aria-label="Экскурсии" ><img class="widget-photo" src="assets/teide-photo-900.webp" srcset="assets/teide-photo-900.webp 900w, assets/teide-photo-1600.webp 1600w" sizes="(max-width: 760px) 92vw, 360px" width="1600" height="1000" alt="" loading="lazy" decoding="async" draggable="false"><span class="photo-caption"><strong data-i18n="filter.tours" >Экскурсии</strong><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span></a><a class="photo-slide" href="#services" data-shortcut="ocean" data-i18n-aria="filter.ocean" aria-label="Океан" hidden inert aria-hidden="true"><img class="widget-photo" src="assets/ocean-photo-900.webp" srcset="assets/ocean-photo-900.webp 900w, assets/ocean-photo-1600.webp 1600w" sizes="(max-width: 760px) 92vw, 360px" width="1600" height="1000" alt="" loading="lazy" decoding="async" draggable="false"><span class="photo-caption"><strong data-i18n="filter.ocean" >Океан</strong><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span></a><a class="photo-slide" href="#services" data-shortcut="road" data-i18n-aria="filter.road" aria-label="За рулём" hidden inert aria-hidden="true"><img class="widget-photo" src="assets/tenerife-quad-900.webp" srcset="assets/tenerife-quad-900.webp 900w, assets/tenerife-quad-1600.webp 1600w" sizes="(max-width: 760px) 92vw, 360px" width="1600" height="1000" alt="" loading="lazy" decoding="async" draggable="false"><span class="photo-caption"><strong data-i18n="filter.road" >За рулём</strong><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span></a><span class="photo-glint" aria-hidden="true"></span><span class="photo-browse-hint" aria-hidden="true"><span data-i18n="widget.browse" >Листайте</span><span class="photo-browse-count">01 / 03</span></span><button class="photo-pause" type="button" aria-controls="brief-photo-stage" aria-pressed="false" aria-label="Приостановить смену фото"><svg class="pause-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M9 6v12M15 6v12"/></svg><svg class="play-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="m9 6 9 6-9 6z"/></svg></button><button class="photo-previous photo-nav" type="button" aria-controls="brief-photo-stage" aria-label="Предыдущее фото" data-i18n-aria="widget.previous"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M19 12H5m6-6-6 6 6 6"/></svg></button><button class="photo-next photo-nav" type="button" aria-controls="brief-photo-stage" aria-label="Следующее фото" data-i18n-aria="widget.next"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></button></div><span class="photo-announcement sr-only" aria-live="polite" aria-atomic="true"></span></section></div></section></div>
++<section class="photo-widget" aria-label="Впечатления Тенерифе" data-i18n-aria="widget.label"><div class="photo-window" id="brief-photo-stage"><a class="photo-slide" href="#services" data-shortcut="tours" data-i18n-aria="filter.tours" aria-label="Экскурсии" ><img class="widget-photo" src="assets/teide-photo-900.webp" srcset="assets/teide-photo-900.webp 900w, assets/teide-photo-1600.webp 1600w" sizes="(max-width: 760px) 92vw, 360px" width="1600" height="1000" alt="" loading="lazy" decoding="async" draggable="false"><span class="photo-caption"><strong data-i18n="filter.tours" >Экскурсии</strong><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span></a><a class="photo-slide" href="#services" data-shortcut="ocean" data-i18n-aria="filter.ocean" aria-label="Океан" hidden inert aria-hidden="true"><img class="widget-photo" src="assets/ocean-photo-900.webp" srcset="assets/ocean-photo-900.webp 900w, assets/ocean-photo-1600.webp 1600w" sizes="(max-width: 760px) 92vw, 360px" width="1600" height="1000" alt="" loading="lazy" decoding="async" draggable="false"><span class="photo-caption"><strong data-i18n="filter.ocean" >Океан</strong><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span></a><a class="photo-slide" href="#services" data-shortcut="road" data-i18n-aria="filter.road" aria-label="За рулём" hidden inert aria-hidden="true"><img class="widget-photo" src="assets/tenerife-quad-900.webp" srcset="assets/tenerife-quad-900.webp 900w, assets/tenerife-quad-1600.webp 1600w" sizes="(max-width: 760px) 92vw, 360px" width="1600" height="1000" alt="" loading="lazy" decoding="async" draggable="false"><span class="photo-caption"><strong data-i18n="filter.road" >За рулём</strong><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span></a><span class="photo-glint" aria-hidden="true"></span><span class="photo-browse-hint" aria-hidden="true"><span data-i18n="widget.browse" >Листайте</span><span class="photo-browse-count">01 / 03</span></span><button class="photo-pause" type="button" aria-controls="brief-photo-stage" aria-pressed="false" aria-label="Приостановить смену фото"><svg class="pause-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M9 6v12M15 6v12"/></svg><svg class="play-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="m9 6 9 6-9 6z"/></svg></button><div class="photo-pagination" role="group" aria-label="Фотографии"><button class="photo-dot" type="button" aria-controls="brief-photo-stage" aria-pressed="true" aria-label="Экскурсии, 1 / 3"><span aria-hidden="true"></span></button><button class="photo-dot" type="button" aria-controls="brief-photo-stage" aria-pressed="false" aria-label="Океан, 2 / 3"><span aria-hidden="true"></span></button><button class="photo-dot" type="button" aria-controls="brief-photo-stage" aria-pressed="false" aria-label="За рулём, 3 / 3"><span aria-hidden="true"></span></button></div><button class="photo-previous photo-nav" type="button" aria-controls="brief-photo-stage" aria-label="Предыдущее фото" data-i18n-aria="widget.previous"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M19 12H5m6-6-6 6 6 6"/></svg></button><button class="photo-next photo-nav" type="button" aria-controls="brief-photo-stage" aria-label="Следующее фото" data-i18n-aria="widget.next"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></button></div><span class="photo-announcement sr-only" aria-live="polite" aria-atomic="true"></span></section></div></section></div>
+ <a class="hero-discover" href="#island"><span data-i18n="nav.routes" >Что посмотреть</span><span class="scroll-mark" aria-hidden="true"></span></a></section>
+ <section class="brief-strip" id="benefits" aria-label="Начните с желания" data-i18n-aria="benefit.kicker"><div class="benefit-grid wrap"><article class="brief-card glass-benefit" style="--benefit-index:0"><span class="benefit-number" aria-hidden="true">01</span><div><h2 data-i18n="stats.private.title" id="benefit-title-0">Автоэкскурсии</h2><p data-i18n="stats.private.text" >Тейде, Маска, Анага и побережье. Выберите маршрут индивидуальной поездки с остановками для прогулок и фото.</p></div><button type="button" class="benefit-open" data-benefit-open="route" aria-haspopup="dialog" aria-labelledby="benefit-title-0 benefit-action-0"><span data-i18n="benefit.action.route" id="benefit-action-0">Посмотреть маршруты</span><span aria-hidden="true">↗</span></button><span class="benefit-rule" aria-hidden="true"></span></article><article class="brief-card glass-benefit" style="--benefit-index:1"><span class="benefit-number" aria-hidden="true">02</span><div><h2 data-i18n="stats.variety.title" id="benefit-title-1">Отдых и приключения</h2><p data-i18n="stats.variety.text" >Яхта, JetSki, квадроциклы, авто или фотосессия. Откройте варианты и выберите занятие для своего дня.</p></div><button type="button" class="benefit-open" data-benefit-open="experiences" aria-haspopup="dialog" aria-labelledby="benefit-title-1 benefit-action-1"><span data-i18n="benefit.action.experiences" id="benefit-action-1">Выбрать занятие</span><span aria-hidden="true">↗</span></button><span class="benefit-rule" aria-hidden="true"></span></article><article class="brief-card glass-benefit" style="--benefit-index:2"><span class="benefit-number" aria-hidden="true">03</span><div><h2 data-i18n="stats.contact.title" id="benefit-title-2">Поможем выбрать</h2><p data-i18n="stats.contact.text" >Не знаете, с чего начать? Посмотрите все услуги или расскажите, какой отдых вам нравится. Подберём вариант вместе.</p></div><button type="button" class="benefit-open" data-benefit-open="contact" aria-haspopup="dialog" aria-labelledby="benefit-title-2 benefit-action-2"><span data-i18n="benefit.action.contact" id="benefit-action-2">Обсудить поездку</span><span aria-hidden="true">↗</span></button><span class="benefit-rule" aria-hidden="true"></span></article></div></section>
+ <section class="island-scroll island-editorial" id="island" aria-label="Экскурсии и морские впечатления" data-i18n-aria="scene.pick"><div class="island-sequence"><div class="island-chapters" tabindex="-1" role="region" aria-label="Экскурсии и морские впечатления" data-i18n-aria="scene.pick"><article class="island-chapter chapter-teide" id="island-teide" aria-labelledby="chapter-title-teide">
+--- a/src/hero-title.js
++++ b/src/hero-title.js
+@@ -65,6 +65,7 @@
+     fittedWidth = document.documentElement.clientWidth;
+     viewportHeight = smallScreen() || touchPointer.matches
+       ? viewportProbe.offsetHeight || innerHeight : innerHeight;
++    const naturalBrand = smallScreen();
+     const font = getComputedStyle(title);
+     titleFontSize = parseFloat(font.fontSize) || 1;
+     titleLetterSpacing = parseFloat(font.letterSpacing) || 0;
+@@ -88,18 +89,25 @@
+         endFontSize: parseFloat(getComputedStyle(targets[index]).fontSize)};
+     });
+     // Apply fitting together, then measure the fitted lines in one read phase.
+-    measurements.forEach(({word, reveal, width, scale}) => {
+-      setStyle(word, '--brand-width', scale.toFixed(4));
+-      setStyle(reveal, 'width', `${width}px`);
++    const commonScale = naturalBrand
++      ? Math.min(1, ...measurements.map(item => item.scale)) : 1;
++    measurements.forEach(item => {
++      const {word, reveal, width, wordWidth} = item;
++      if (naturalBrand) item.scale = commonScale;
++      setStyle(word, '--brand-width', item.scale.toFixed(4));
++      setStyle(reveal, 'width', `${naturalBrand ? wordWidth * commonScale : width}px`);
++      setStyle(reveal, 'height', naturalBrand
++        ? `${parseFloat(font.lineHeight) * commonScale}px` : '');
+     });
+     geometry = measurements.map(({line, word, reveal, scale, wordWidth, paddingTop, end, endFontSize}) => {
+       const lineRect = line.getBoundingClientRect();
+       const wordRect = word.getBoundingClientRect();
+       const revealRect = reveal.getBoundingClientRect();
+       return {
+-        x: lineRect.left,
++        x: naturalBrand ? wordRect.left : lineRect.left,
+         y: lineRect.top + scrollY + paddingTop + wordRect.top - revealRect.top,
+         scale,
++        startScaleY: naturalBrand ? scale : 1,
+         endX: end.left,
+         endY: end.top,
+         endScaleX: end.width / wordWidth,
+@@ -188,7 +196,7 @@
+       setStyle(flight, 'color', `rgb(${color.join(',')})`);
+       geometry.forEach((item, index) => {
+         const drift = float * (index ? -.7 : 1) * (1 - travel);
+-        const sizeRatio = mix(1, item.endScaleY, travel);
++        const sizeRatio = mix(item.startScaleY, item.endScaleY, travel);
+         const word = flyingWords[index];
+         // On a phone, scale a single glyph layer rather than rerasterizing a
+         // different font size on every touch frame. Desktop keeps crisp type.
+--- a/src/brand-cursor.js
++++ b/src/brand-cursor.js
+@@ -10,7 +10,7 @@
+   }));
+   let pointer = null, frame = 0, previousTime = 0;
+   let hasGlyphMotion = false, cursorActive = false, cursorMoving = false;
+-  const enabled = () => fine.matches && !reduced.matches && !root.classList.contains('motion-off');
++  const enabled = () => document.documentElement.clientWidth > 760 && fine.matches && !reduced.matches && !root.classList.contains('motion-off');
+   const visible = () => !document.hidden && !document.body.classList.contains('brand-title-away');
+   const mix = (a, b, t) => a + (b - a) * t;
+ 
+--- a/src/brief-carousel.js
++++ b/src/brief-carousel.js
+@@ -7,6 +7,8 @@
+   const slides = [...widget.querySelectorAll('.photo-slide')];
+   if (!viewport || !slides.length) return;
+   const pause = widget.querySelector('.photo-pause');
++  const dots = [...widget.querySelectorAll('.photo-pagination .photo-dot')];
++  const mobileViewer = matchMedia('(max-width: 760px)');
+   const previous = widget.querySelector('.photo-previous');
+   const next = widget.querySelector('.photo-next');
+   const count = widget.querySelector('.photo-browse-count');
+@@ -35,7 +37,7 @@
+   let lastModalOpen = modalOpen();
+   const keyboardFocus = () => widget.contains(document.activeElement)
+     && document.activeElement.matches(':focus-visible');
+-  const mayPlay = () => visible && windowFocused && !document.hidden && !userPaused
++  const mayPlay = () => !mobileViewer.matches && visible && windowFocused && !document.hidden && !userPaused
+     && !gesture && !keyboardFocus() && !motionOff() && !modalOpen();
+ 
+   function lightPoint(pointer) {
+@@ -210,6 +212,11 @@
+     previous?.setAttribute('aria-label', t('widget.previous'));
+     next?.setAttribute('aria-label', t('widget.next'));
+     if (count) count.textContent = `${String(active + 1).padStart(2,'0')} / ${String(slides.length).padStart(2,'0')}`;
++    dots.forEach((dot, index) => {
++      dot.setAttribute('aria-pressed', String(index === active));
++      dot.setAttribute('aria-label', `${t('filter.' + slides[index].dataset.shortcut)}, ${index + 1} / ${slides.length}`);
++    });
++    widget.querySelector('.photo-pagination')?.setAttribute('aria-label', t('widget.carousel'));
+     widget.dataset.active = String(active);
+   }
+   async function show(index, direction = 1, manual = true, startX = 0) {
+@@ -245,6 +252,8 @@
+   }
+ 
+   pause?.addEventListener('click', () => {cancelInteraction();userPaused = !userPaused;syncLabels();syncClock();});
++  dots.forEach((dot, index) => dot.addEventListener('click', () => show(index, index >= active ? 1 : -1)));
++  mobileViewer.addEventListener('change', syncClock);
+   previous?.addEventListener('click', () => show(active - 1, -1));
+   next?.addEventListener('click', () => show(active + 1, 1));
+   widget.addEventListener('keydown', event => {
+@@ -266,7 +275,7 @@
+ 
+   viewport.addEventListener('pointerdown', event => {
+     if (!event.isPrimary || (event.pointerType === 'mouse' && event.button !== 0)) return;
+-    if (event.target.closest('.photo-pause,.photo-nav')) return;
++    if (event.target.closest('.photo-pause,.photo-nav,.photo-pagination')) return;
+     cancelInteraction();
+     gesture = {id:event.pointerId,x:event.clientX,y:event.clientY,dx:0,active:false};
+     resetCursor();
+--- a/src/mobile-brand-trial.css
++++ b/src/mobile-brand-trial.css
+@@ -0,0 +1,95 @@
++/* Mobile opening study v58. Working source and desktop layout stay separate. */
++.photo-window .photo-pagination {display: none;}
++@media (max-width: 760px) {
++  html {overflow-x: clip;}
++  .hero h1 {
++    width: calc(100% - 48px);
++    height: calc(100svh - 96px - env(safe-area-inset-top, 0px));
++    height: calc(100lvh - 96px - env(safe-area-inset-top, 0px));
++    min-height: 0;
++    margin-bottom: 0;
++    font-family: 'Bricolage Grotesque', Onest, sans-serif;
++    font-weight: 750;
++    font-variation-settings: 'opsz' 96, 'wdth' 100;
++    font-size: clamp(76px, calc((100vw - 48px) / 3.6), 150px);
++    line-height: 1.03;
++    letter-spacing: -.025em;
++    color: #f7f8f8;
++  }
++  .hero .brand-line {padding: 4px 0 8px;}
++  .hero .brand-word {
++    transform: scale(var(--brand-width, 1));
++    transform-origin: left top;
++  }
++  #hero-title .brand-glyph,
++  #hero-title .brand-glyph:hover {transform: none !important;will-change: auto;}
++  /* The backdrop belongs to the opening, not the long choice section below. */
++  .hero-backdrop {
++    bottom: auto;
++    height: 100svh;
++    height: 100lvh;
++  }
++  .hero-landscape {
++    inset: 0;
++    height: 100%;
++    object-position: 40% 58%;
++    opacity: 1;
++    filter: saturate(.88);
++    transform: none;
++  }
++  .hero-shade {
++    background: linear-gradient(180deg, rgba(20, 26, 30, .56),
++      rgba(20, 26, 30, .25) 45%, rgba(20, 26, 30, .44));
++  }
++  .photo-window .photo-pause {display: none;}
++  .photo-window .photo-pagination {
++    position: absolute;
++    z-index: 6;
++    left: 50%;
++    top: 12px;
++    bottom: auto;
++    translate: -50% 0;
++    display: flex;
++    flex: none;
++    width: 132px;
++    min-width: 0;
++    max-width: none;
++    height: 44px;
++    margin: 0;
++    padding: 0;
++    border-radius: 24px;
++    background: rgba(20, 26, 30, .24);
++  }
++  .photo-pagination .photo-dot {
++    flex: 0 0 44px;
++    width: 44px;
++    height: 44px;
++    padding: 0;
++    border-radius: 50%;
++    -webkit-tap-highlight-color: transparent;
++  }
++  .photo-pagination .photo-dot::before {
++    left: 50%;
++    right: auto;
++    top: 50%;
++    width: 6px;
++    height: 6px;
++    border-radius: 50%;
++    background: #ffffff99;
++    transform: translate(-50%, -50%);
++    transition: background 160ms ease, transform 160ms ease;
++  }
++  .photo-pagination .photo-dot[aria-pressed="true"]::before {
++    background: #fff;
++    transform: translate(-50%, -50%) scale(1.5);
++  }
++  .photo-pagination .photo-dot > span {display: none;}
++  .photo-pagination .photo-dot:focus-visible {
++    outline: 2px solid #fff;
++    outline-offset: -3px;
++  }
++  .motion-off .photo-pagination .photo-dot::before {transition: none;}
++}
++@media (max-width: 760px) and (prefers-reduced-motion: reduce) {
++  .photo-pagination .photo-dot::before {transition: none;}
++}
+--- a/src/preview.html
++++ b/src/preview.html
+@@ -0,0 +1,16 @@
++<!doctype html>
++<html lang="ru">
++<head>
++  <meta charset="utf-8">
++  <meta name="viewport" content="width=device-width, initial-scale=1">
++  <title>Проба мобильного названия — Tenerife Travel</title>
++  <style>
++    * {box-sizing: border-box;}
++    body {margin: 0;background: #e4e6e6;display: grid;justify-items: center;}
++    iframe {display: block;width: min(390px, 100vw);height: min(844px, 100svh);border: 0;background: #303232;}
++  </style>
++</head>
++<body>
++  <iframe src="index.html#home" title="Пробный мобильный сайт, ширина 390px"></iframe>
++</body>
++</html>

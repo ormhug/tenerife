@@ -1,0 +1,11 @@
+Tenerife Travel - Atlantic palette
+
+Graphite background: #10191E
+Deep ocean panels: #142934
+Atlantic cyan accent: #74CFE4
+Dark button text: #09232C
+Milk-white catalog: #F8FAF7
+Ocean-blue catalog selection: #125C79
+Light-surface focus: #07516E
+
+Photographs keep their natural colors. Existing interaction and type hierarchy are preserved.

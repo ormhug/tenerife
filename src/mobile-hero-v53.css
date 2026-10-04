@@ -1,0 +1,106 @@
+/* A stable phone opening: the title sits lower and the invitation is already
+   visible in the first screen. Browser chrome cannot stretch this spacing. */
+@media (max-width: 760px) {
+  .hero {
+    min-height: 0;
+    padding: calc(96px + env(safe-area-inset-top, 0px)) 0 44px;
+  }
+  .hero h1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: calc(70svh - 96px);
+    min-height: 280px;
+    width: calc(100% - 32px);
+    margin: 0 auto;
+    font-size: min(36vw, 27svh);
+    line-height: .9;
+  }
+  .hero .brand-line {flex: 0 0 auto;padding: 4px 0 16px;}
+  .hero-white-field {
+    clip-path: none;
+    opacity: var(--white-phase, 0);
+    will-change: opacity;
+  }
+  .hero-white-field::after, .hero-backdrop::after {display: none;}
+  .hero-brief {width: 100%;}
+  .hero-brief .brief-surface {clip-path: none;box-shadow: none;}
+  .hero-brief .brief-top {padding: 30px 18px 24px;gap: 26px;}
+  .hero-brief .brief-lead {width: 100%;min-width: 0;}
+  .hero-brief .brief-title {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: flex-start;
+    gap: .12em .13em;
+    min-height: 0;
+    font-size: clamp(40px, 12.45vw, 72px);
+    line-height: 1.12;
+    text-wrap: wrap;
+  }
+  html[lang] .hero-brief .brief-title .brief-title-line {
+    flex: 0 0 auto;
+    min-width: 0;
+    max-width: 100%;
+    padding: 0;
+    margin: 0;
+    line-height: 1.25;
+    overflow: visible;
+  }
+  html[lang] .hero-brief .brief-title .brief-title-line:is(:first-child, :nth-child(2)) {
+    font-size: .53em;
+    font-weight: 600;
+  }
+  html[lang] .hero-brief .brief-title .brief-title-line:nth-child(3) {
+    flex-basis: 100%;
+    font-size: 1em;
+    line-height: 1.16;
+  }
+  .hero-brief .brief-title .brief-title-line > span,
+  .hero-brief.brief-motion-ready .brief-title .brief-title-line > span {
+    transform: none;
+    opacity: 1;
+    white-space: normal;
+    overflow-wrap: normal;
+  }
+  html[lang='en'] .hero-brief .brief-title .brief-title-line:is(:first-child, :nth-child(2)),
+  html[lang='es'] .hero-brief .brief-title .brief-title-line:is(:first-child, :nth-child(2)) {font-size: .47em;}
+  .hero-brief .brief-next {margin-top: 26px;opacity: 1;translate: none;}
+  .hero-brief .brief-go {min-height: 54px;font-size: 17px;padding-inline: 18px;}
+  .hero-brief .photo-widget {width: min(100%, 420px);}
+  .photo-window .photo-caption {font-size: 22px;background: #ecececd9;}
+  .photo-window .photo-caption,
+  .photo-window :is(.photo-nav, .photo-pause) {
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+  }
+  .site-header.header-light {background: #eeeeeef5;-webkit-backdrop-filter: none;backdrop-filter: none;}
+  .site-header.header-light::after {display: none;}
+  html.island-pinned #island .scene-narrow .is-widget .chapter-body {
+    justify-content: flex-start;
+    padding-top: 18px;
+  }
+  html:not(.island-pinned) #island .island-chapter {
+    height: auto;
+    min-height: 0;
+  }
+  html:not(.island-pinned) #island .chapter-body {
+    min-height: clamp(390px, 72svh, 520px);
+    height: auto;
+    padding: 32px 22px;
+    justify-content: center;
+  }
+  html:not(.island-pinned) #island .chapter-name {
+    font-size: clamp(28px, 8vw, 42px);
+    line-height: 1.15;
+    margin: 0 0 18px;
+    text-wrap: balance;
+  }
+  html:not(.island-pinned) #island .chapter-description p {font-size: 15px;line-height: 1.55;}
+  html:not(.island-pinned) #island .chapter-book.button {min-height: 48px;font-size: 14px;}
+}
+@media (max-width: 360px) {
+  .hero-brief .brief-top {padding-inline: 14px;}
+  .hero-brief .brief-title {font-size: 12.3vw;}
+}

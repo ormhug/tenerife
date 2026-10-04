@@ -1,0 +1,114 @@
+/* Four photographs travel vertically with the page, without an independent timer. */
+.island-pinned .island-chapter {
+  transform: translate3d(0,var(--scene-shift,0%),0);
+}
+.island-pinned .chapter-image,
+.island-pinned .chapter-shade {clip-path: none;}
+
+/* Quiet route notes and a vertical cue leave the central offer in focus. */
+.island-editorial .chapter-body {padding-bottom: 94px;}
+.chapter-route-details {
+  position: absolute;
+  left: max(28px,4vw);
+  bottom: 27px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px 16px;
+  max-width: 65%;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  color: var(--scene-text,#eeefef);
+  font: 500 11px/1.5 'Onest',Manrope,sans-serif;
+  letter-spacing: .035em;
+  text-shadow: 0 1px 12px #28282899;
+}
+.chapter-route-details li {display: inline-flex;align-items: center;gap: 8px;}
+.chapter-route-details li::before {
+  content: '';
+  width: 4px;
+  height: 4px;
+  border: 1px solid currentColor;
+  border-radius: 50%;
+  opacity: .8;
+}
+.chapter-route-details li:first-child::before {
+  width: 6px;
+  height: 6px;
+  background: var(--scene-accent,#e9c9bd);
+  border: 0;
+}
+.chapter-scroll-cue {
+  position: absolute;
+  bottom: 22px;
+  right: max(38px,4vw);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--scene-text,#eeefef);
+  font: 500 11px/1.4 'Onest',Manrope,sans-serif;
+  letter-spacing: .025em;
+  text-shadow: 0 1px 12px #28282899;
+}
+.chapter-scroll-cue svg {width: 16px;height: 28px;flex: 0 0 16px;}
+.chapter-scroll-cue::before {
+  content: '';
+  display: block;
+  width: 34px;
+  height: 1px;
+  background: currentColor;
+  opacity: .5;
+}
+.island-editorial .chapter-top::after {
+  content: '';
+  position: absolute;
+  top: 6px;
+  left: 50%;
+  width: 11px;
+  height: 11px;
+  background: linear-gradient(currentColor,currentColor) center/1px 11px no-repeat,
+    linear-gradient(currentColor,currentColor) center/11px 1px no-repeat;
+  color: var(--scene-accent,#e9c9bd);
+  opacity: .65;
+}
+@media (min-width:761px) and (max-height:750px) {
+  .island-editorial .chapter-body {padding-bottom: 84px;}
+}
+@media (max-width:760px) {
+  .island-editorial .chapter-body {padding-bottom: 113px;}
+  .chapter-route-details {
+    left: 22px;
+    right: 22px;
+    bottom: 65px;
+    max-width: none;
+    justify-content: center;
+    gap: 8px 12px;
+    font-size: 10px;
+    letter-spacing: .01em;
+  }
+  .chapter-scroll-cue {
+    right: 22px;
+    left: 22px;
+    bottom: 20px;
+    justify-content: center;
+    font-size: 10px;
+  }
+  .chapter-scroll-cue::before {width: 25px;}
+  .island-editorial .chapter-top::after {display: none;}
+}
+@media (max-width:760px) and (max-height:700px) {
+  .island-editorial .chapter-body {padding-bottom: 98px;}
+  .chapter-route-details {bottom: 53px;font-size: 9px;gap: 6px 10px;}
+  .chapter-scroll-cue {bottom: 16px;}
+  .chapter-scroll-cue svg {height: 24px;}
+}
+.motion-off .island-chapter {transform: none;}
+@media (prefers-reduced-motion:reduce) {
+  .island-chapter {transform: none;}
+}
+@media print {
+  .island-chapter {transform: none!important;}
+  .chapter-route-details,.chapter-scroll-cue,.island-editorial .chapter-top::after {display: none;}
+  .island-editorial .chapter-body {padding: 20px 0;}
+}

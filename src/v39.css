@@ -1,0 +1,280 @@
+/* v39 — interactive question, glass header, photo-first collections.
+   Palette and grain come from the existing pastel system. */
+
+:root {
+  --v39-ink: #2e2f2f;
+  --v39-soft: #6a6b6c;
+  --v39-accent: #b06043;      /* the brown of "Тенерифе?" */
+  --v39-glass: rgba(240, 240, 240, .56);
+  --v39-glass-strong: rgba(240, 240, 240, .78);
+  --v39-edge: rgba(249, 249, 249, .62);
+  --v39-line: rgba(98, 99, 100, .22);
+  --v39-grain: url('assets/fine-grain.png');
+}
+
+/* ======================================================================
+   1. "Каким будет ваш Тенерифе?" — the question gets answers
+   ====================================================================== */
+.hero-brief .brief-title {min-height: 0;}
+.hero-brief .brief-lead {display: flex; flex-direction: column; align-items: flex-start;}
+
+
+.brief-next {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 14px 24px;
+  width: min(100%, 560px);
+  margin-top: 20px;
+  opacity: var(--brief-links, 1);
+  translate: 0 calc((1 - var(--brief-links, 1)) * 18px);
+}
+.brief-go {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 48px;
+  padding: 12px 18px;
+  border: 1px solid #d19985;
+  border-radius: 11px;
+  background: #e6beaf;
+  color: #2d2e2f;
+  font: 650 14px/1.2 Onest, Manrope, sans-serif;
+  text-decoration: none;
+  transition: background-color .2s ease;
+}
+.brief-go svg {width: 18px; height: 18px; transition: translate .25s ease;}
+.brief-go:hover {background: #f0d0c4;}
+.brief-go:hover svg {translate: 4px 0;}
+.brief-go:focus-visible {outline: 2px solid var(--v39-accent); outline-offset: 3px;}
+
+@media (max-width: 760px) {
+
+
+  .brief-next {margin-top: 16px;}
+  .brief-go {width: 100%; justify-content: space-between;}
+}
+
+/* ======================================================================
+   2. Header — translucent glass with grain and a sliding light pill
+   ====================================================================== */
+.site-header.header-light {
+  background: rgba(240, 240, 240, .96);
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
+  border-bottom: 1px solid var(--v39-edge);
+  box-shadow: 0 10px 34px -18px rgba(53, 54, 55, .28), inset 0 -1px 0 rgba(98, 99, 100, .12);
+  isolation: isolate;
+}
+/* Grain lives in the glass, like on the photos. */
+.site-header.header-light::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background-image: var(--v39-grain);
+  background-size: 160px 160px;
+  opacity: .018;
+  pointer-events: none;
+}
+/* Static light avoids repainting the fixed header throughout every scroll. */
+.site-header.header-light::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(105deg, transparent 35%, rgba(250, 250, 250, .55) 50%, transparent 65%) 0 0 / 250% 100% no-repeat;
+  pointer-events: none;
+}
+/* The header slides down into place the first time it appears. */
+.site-header.header-light {animation: v39-header-in .55s cubic-bezier(.2, .75, .2, 1) both;}
+@keyframes v39-header-in {
+  from {translate: 0 -12px; opacity: .4;}
+  to {translate: 0 0; opacity: 1;}
+}
+
+@media (min-width: 761px) {
+  .main-nav {position: relative;}
+}
+.main-nav .nav-pill {
+  position: absolute;
+  z-index: 0;
+  top: 50%;
+  left: 0;
+  height: 40px;
+  width: var(--pill-w, 0px);
+  border: 1px solid rgba(250, 250, 250, .8);
+  border-radius: 11px;
+  background: linear-gradient(180deg, rgba(250, 251, 251, .82), rgba(227, 228, 228, .62));
+  box-shadow: 0 6px 18px -10px rgba(53, 54, 55, .45), inset 0 1px 0 rgba(255, 255, 255, .7);
+  transform: translate3d(var(--pill-x, 0px), -50%, 0);
+  opacity: var(--pill-o, 0);
+  transition: transform .45s cubic-bezier(.2, .8, .2, 1), width .45s cubic-bezier(.2, .8, .2, 1), opacity .25s ease;
+  pointer-events: none;
+}
+.main-nav a {position: relative; z-index: 1; padding: 9px 14px; transition: color .25s ease;}
+.main-nav a.is-current, .main-nav a:hover {color: var(--v39-ink);}
+/* The pill replaces the old underline. */
+.main-nav.has-pill a::after, .main-nav.has-pill a.is-current::after {opacity: 0 !important;}
+
+.site-header .language-dock summary,
+.language-dock.is-ready summary {
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
+}
+.site-header .header-book.button {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  background: linear-gradient(180deg, #eccabd, #e2b6a6);
+  transition: background-color .2s ease, box-shadow .25s ease, translate .25s ease;
+}
+.site-header .header-book.button:hover {
+  box-shadow: 0 8px 20px -10px rgba(128, 69, 48, .55);
+  translate: 0 -1px;
+}
+
+/* Grain on the pill and the main button, kept subtle. */
+.main-nav .nav-pill::after,
+.site-header .header-book.button::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border-radius: inherit;
+  background: var(--v39-grain) 0 0 / 140px 140px;
+  opacity: .012;
+  pointer-events: none;
+}
+@media (max-width: 760px) {
+  .main-nav .nav-pill {display: none;}
+  /* Keep the dropdown out of the header's flex layout. */
+  .main-nav {position: absolute; top: calc(100% + 8px);}
+}
+
+/* ======================================================================
+   3. Collections — photo first, glass caption like the photo widget
+   ====================================================================== */
+.playlist-categories {gap: clamp(12px, 1.4vw, 20px);}
+.playlist-category {
+  min-height: 0;
+  aspect-ratio: 4 / 5;
+  border: 1px solid rgba(249, 249, 249, .8);
+  background: #cdcece;
+  box-shadow: 0 18px 40px -26px rgba(39, 40, 41, .55);
+  transition: box-shadow .35s ease, translate .35s cubic-bezier(.2, .8, .2, 1);
+}
+.playlist-art img {
+  filter: saturate(.82) brightness(1.02);
+  transform: scale(1.02);
+  transition: transform 1.1s cubic-bezier(.2, .7, .2, 1), filter .5s ease;
+}
+.playlist-art::after {opacity: .09;}
+.playlist-category::before {background: linear-gradient(180deg, rgba(22, 23, 24, 0) 45%, rgba(22, 23, 24, .28) 100%);}
+
+.playlist-count {
+  top: 14px;
+  right: 14px;
+  min-height: 36px;
+  display: inline-flex;
+  align-items: center;
+  padding: 7px 12px;
+  border: 1px solid rgba(241, 241, 241, .85);
+  background: rgba(232, 232, 232, .85);
+  color: #404142;
+  font: 600 13px/1.2 Onest, Manrope, sans-serif;
+  -webkit-backdrop-filter: blur(18px) saturate(.65);
+  backdrop-filter: blur(18px) saturate(.65);
+}
+
+.playlist-copy {
+  left: 12px;
+  right: 12px;
+  bottom: 12px;
+  min-height: 0;
+  padding: 18px 18px 16px;
+  gap: 6px;
+  border: 1px solid rgba(245, 246, 246, .5);
+  background: color-mix(in srgb, var(--playlist-tint) 52%, rgba(234, 235, 235, .2));
+  -webkit-backdrop-filter: blur(14px) saturate(.85);
+  backdrop-filter: blur(14px) saturate(.85);
+  box-shadow: 0 5px 20px rgba(26, 27, 27, .06);
+  isolation: isolate;
+}
+.playlist-copy::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: var(--v39-grain) 0 0 / 160px 160px;
+  opacity: .07;
+  pointer-events: none;
+}
+.playlist-title {font-size: clamp(26px, 2.2vw, 34px); line-height: 1.05;}
+.playlist-note {min-height: 0; font-size: 14px; line-height: 1.45; opacity: .9;}
+/* The action row collapses into an arrow next to the title. */
+.playlist-action {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  min-height: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 0;
+}
+.playlist-action > span:first-child {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+.playlist-arrow {
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  border: 1px solid rgba(249, 249, 249, .7);
+  background: rgba(249, 249, 249, .45);
+  font-size: 18px;
+  transition: translate .3s ease, background-color .3s ease;
+}
+.playlist-title {padding-right: 44px;}
+
+.playlist-category:hover {
+  translate: 0 -4px;
+  box-shadow: 0 26px 46px -26px rgba(39, 40, 41, .65);
+  border-color: rgba(249, 249, 249, .95);
+}
+.playlist-category:hover .playlist-art img {transform: scale(1.08); filter: saturate(.95) brightness(1.04);}
+.playlist-category:hover .playlist-arrow {translate: 2px -2px; background: rgba(249, 249, 249, .8);}
+.playlist-category.is-selected {box-shadow: 0 0 0 2px var(--playlist-ink), 0 18px 40px -26px rgba(39, 40, 41, .55);}
+
+@media (max-width: 1000px) {
+  .playlist-categories {grid-template-columns: repeat(2, minmax(0, 1fr));}
+  .playlist-category {aspect-ratio: 5 / 4;}
+}
+@media (max-width: 560px) {
+  .playlist-category {aspect-ratio: 4 / 5; min-height: 0;}
+  .playlist-copy {left: 8px; right: 8px; bottom: 8px; padding: 12px 12px 11px;}
+  .playlist-title {font-size: 19px; padding-right: 0;}
+  .playlist-note {font-size: 12px;}
+  .playlist-action {display: none;}
+  .playlist-count {top: 8px; right: 8px; min-height: 28px; padding: 5px 8px; font-size: 11.5px;}
+}
+
+/* ======================================================================
+   Motion preferences
+   ====================================================================== */
+.motion-off .site-header.header-light,
+.motion-off .site-header.header-light::after {animation: none;}
+.motion-off .brief-next {opacity: 1; translate: none;}
+@media (prefers-reduced-motion: reduce) {
+  .site-header.header-light, .site-header.header-light::after {animation: none;}
+  .brief-next {opacity: 1; translate: none;}
+  .main-nav .nav-pill, .playlist-art img, .playlist-category {transition: none;}
+
+}

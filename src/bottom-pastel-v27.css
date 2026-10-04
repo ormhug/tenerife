@@ -1,0 +1,692 @@
+/* The final chapter keeps the island's square glass surfaces and warmer light. */
+#how,
+#booking,
+.site-footer {
+  --bottom-ink: #353636;
+  --bottom-muted: #626262;
+  --bottom-line: #a1a2a266;
+  --bottom-paper: #f0f1f1;
+  --bottom-sage: #dfe0e0;
+  --bottom-blush: #dadbdb;
+  color: var(--bottom-ink);
+  font-family: Onest, Arial, sans-serif;
+}
+
+#how {
+  position: relative;
+  padding-block: clamp(72px, 9vw, 136px) 60px;
+}
+
+#how > .section-heading {
+  display: block;
+  margin-bottom: 48px;
+}
+
+#how #how-title {
+  max-width: 100%;
+  font-size: clamp(46px, 7.2vw, 98px);
+  line-height: 1.02;
+  letter-spacing: -.065em;
+  font-weight: 580;
+  text-wrap: balance;
+}
+
+#how :is(.steps, .process-grid) {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+  align-items: stretch;
+}
+
+#how :is(.step, .process-card) {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  min-height: 415px;
+  padding: 200px 28px 32px;
+  overflow: hidden;
+  border: 1px solid var(--bottom-line);
+  border-radius: 0;
+  background: #f0f1f1cc;
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  box-shadow: none;
+  rotate: none;
+  isolation: isolate;
+}
+
+#how :is(.step, .process-card)::before {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  inset: 0 0 auto;
+  height: 165px;
+  border-radius: 0;
+  background: linear-gradient(0deg, #e7e8e833, #e0e0e066), url('assets/coast-photo-900.webp') center 54% / cover;
+  opacity: 1;
+  filter: saturate(.52) sepia(.13);
+  transition: none;
+  mask: none;
+}
+
+#how :is(.step, .process-card):nth-child(2) {
+  background-color: #e2e3e3cc;
+}
+
+#how :is(.step, .process-card):nth-child(2)::before {
+  background-image: linear-gradient(0deg, #dedfdf3d, #e0e0e04d), url('assets/masca-photo-900.webp');
+  background-position: center 42%;
+}
+
+#how :is(.step, .process-card):nth-child(3) {
+  background-color: #e2e2e2cc;
+}
+
+#how :is(.step, .process-card):nth-child(3)::before {
+  background-image: linear-gradient(0deg, #d4d5d64d, #dbdcdc4d), url('assets/ocean-photo-900.webp');
+  background-position: center 56%;
+}
+
+#how :is(.step, .process-card)::after,
+#how .about-panel::after,
+#booking .inquiry-form::after {
+  content: '';
+  position: absolute;
+  z-index: 3;
+  inset: 0;
+  border: 0;
+  border-radius: 0;
+  background: url('assets/fine-grain.png') repeat;
+  background-size: 140px 140px;
+  opacity: .055;
+  mix-blend-mode: multiply;
+  pointer-events: none;
+  mask: none;
+  transition: none;
+}
+
+#how :is(.step-number, .process-number) {
+  position: absolute;
+  z-index: 1;
+  top: 18px;
+  left: 20px;
+  display: grid;
+  place-items: center;
+  width: 72px;
+  height: 72px;
+  margin: 0;
+  border: 1px solid #ffffff99;
+  border-radius: 0;
+  background: #f0f1f1c4;
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  color: var(--bottom-ink);
+  font-size: 55px;
+  line-height: 1;
+  letter-spacing: -.055em;
+  font-weight: 500;
+}
+
+#how :is(.step, .process-card) h3 {
+  margin-bottom: 17px;
+  max-width: 18ch;
+  color: var(--bottom-ink);
+  font-size: clamp(25px, 2.5vw, 34px);
+  line-height: 1.12;
+  letter-spacing: -.045em;
+  font-weight: 560;
+  text-wrap: balance;
+}
+
+#how :is(.step, .process-card) p {
+  color: var(--bottom-muted);
+  font-size: 16px;
+  line-height: 1.65;
+  max-width: 34ch;
+}
+
+#how .about-panel {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1.65fr) minmax(240px, 1fr);
+  align-items: center;
+  gap: 48px;
+  margin-top: 24px;
+  padding: 40px;
+  border: 1px solid var(--bottom-line);
+  border-radius: 0;
+  background: #dfe0e0c9;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  box-shadow: none;
+}
+
+#how .about-panel::before,
+#booking .inquiry-form::before {
+  display: none;
+}
+
+#how .about-panel > div:first-child {
+  max-width: 720px;
+}
+
+#how .about-panel h3 {
+  margin-bottom: 17px;
+  color: var(--bottom-ink);
+  font-size: clamp(27px, 3.1vw, 42px);
+  line-height: 1.14;
+  letter-spacing: -.05em;
+  font-weight: 550;
+}
+
+#how .about-panel p {
+  max-width: 60ch;
+  color: var(--bottom-muted);
+  font-size: 16px;
+  line-height: 1.65;
+}
+
+#how .about-links {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: flex-end;
+  margin: 0;
+}
+
+#how .about-links .button {
+  max-width: 100%;
+  min-height: 54px;
+  padding: 15px 22px;
+  border: 1px solid #6a6b6b6b;
+  border-radius: 0;
+  background: #f3f4f48c;
+  color: var(--bottom-ink);
+  box-shadow: none;
+  font-size: 15px;
+}
+
+#how .about-links .button:hover {
+  border-color: #6c6d6e;
+  background: #f3f4f4d9;
+}
+
+#how .text-link,
+#booking .text-link {
+  color: #515252;
+  text-decoration-color: #848585;
+  font-size: 15px;
+}
+
+#booking {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: clamp(40px, 6vw, 82px);
+  align-items: start;
+  padding-block: 76px 100px;
+  background: transparent;
+  border: 0;
+  border-top: 1px solid var(--bottom-line);
+  border-radius: 0;
+  margin-bottom: 0;
+}
+
+#booking .booking-copy h2 {
+  max-width: 9.5ch;
+  margin-bottom: 28px;
+  color: var(--bottom-ink);
+  font-size: clamp(42px, 5.5vw, 72px);
+  line-height: 1.04;
+  letter-spacing: -.06em;
+  font-weight: 550;
+  text-wrap: balance;
+}
+
+#booking .booking-copy > p {
+  max-width: 37ch;
+  margin-bottom: 30px;
+  color: var(--bottom-muted);
+  font-size: 17px;
+  line-height: 1.65;
+}
+
+#booking .phone {
+  color: var(--bottom-ink);
+  font-size: clamp(25px, 3vw, 38px);
+  line-height: 1.2;
+  letter-spacing: -.04em;
+  margin-bottom: 13px;
+  font-weight: 520;
+}
+
+#booking .phone:hover {
+  color: #686969;
+}
+
+#booking .booking-emblem {
+  width: 100px;
+  height: 100px;
+  margin-top: 35px;
+  color: #818283;
+  opacity: .5;
+  filter: none;
+  animation: none;
+}
+
+#booking .inquiry-form {
+  position: relative;
+  padding: 35px;
+  border: 1px solid #a9aaaa85;
+  border-radius: 0;
+  background: #f0f1f1b8;
+  color: var(--bottom-ink);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  box-shadow: none;
+  color-scheme: light;
+}
+
+#booking .inquiry-form label {
+  margin-bottom: 9px;
+  color: var(--bottom-ink);
+  font-size: 15px;
+  font-weight: 540;
+  line-height: 1.5;
+}
+
+#booking .inquiry-form :is(input, select, textarea) {
+  min-width: 0;
+  min-height: 53px;
+  padding: 13px 14px;
+  border: 1px solid #a4a5a68f;
+  border-radius: 0;
+  background: #f9f9f96b;
+  color: var(--bottom-ink);
+  font-family: inherit;
+  font-size: 16px;
+  line-height: 1.5;
+  box-shadow: none;
+  transition: border-color .2s, background .2s;
+}
+
+#booking .inquiry-form :is(input, select, textarea):hover {
+  border-color: #7a7b7b;
+}
+
+#booking .inquiry-form :is(input, select, textarea):focus-visible {
+  border-color: #636566;
+  background: #fbfbfb;
+  outline: 2px solid #636566;
+  outline-offset: 3px;
+  box-shadow: none;
+}
+
+#booking .inquiry-form textarea {
+  min-height: 116px;
+  resize: vertical;
+}
+
+#booking .inquiry-form ::placeholder {
+  color: #747475;
+  opacity: 1;
+}
+
+#booking .inquiry-form .field-hint {
+  color: #696a6a;
+  font-size: 12px;
+  font-weight: 400;
+}
+
+#booking .form-row {
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
+  gap: 16px;
+}
+
+#booking .inquiry-summary {
+  margin-block: 22px 18px;
+  padding: 17px;
+  border: 1px solid #9e9fa080;
+  border-radius: 0;
+  background: #dfe0e088;
+  color: var(--bottom-ink);
+}
+
+#booking .inquiry-summary > span {
+  color: var(--bottom-muted);
+  font-size: 12px;
+}
+
+#booking .inquiry-summary strong {
+  font-size: 16px;
+  font-weight: 520;
+}
+
+#booking .selected-preference {
+  padding: 16px;
+  border: 1px solid #a0a1a270;
+  border-radius: 0;
+  background: #dfe0e088;
+  color: var(--bottom-ink);
+}
+
+#booking .selected-preference :is(span, strong, button) {
+  color: var(--bottom-ink);
+}
+
+#booking .selected-preference button {
+  border-radius: 0;
+  border-color: #929394;
+  background: #f9f9f97a;
+}
+
+#booking .inquiry-form > .button {
+  min-height: 59px;
+  border: 1px solid #d29d8a;
+  border-radius: 0;
+  background: var(--bottom-blush);
+  color: #3e3f40;
+  box-shadow: none;
+  font-size: 16px;
+}
+
+#booking .inquiry-form > .button:hover {
+  background: #e4c2b6;
+  border-color: #c68067;
+}
+
+#booking .form-note {
+  max-width: none;
+  margin: 16px 0 0;
+  color: var(--bottom-muted);
+  text-align: left;
+  font-size: 12px;
+  line-height: 1.65;
+}
+
+.site-footer {
+  border-top: 1px solid var(--bottom-line);
+  padding-block: 44px 58px;
+}
+
+.site-footer .footer-main {
+  grid-template-columns: 1fr 1.35fr 1fr;
+  gap: 42px;
+  align-items: start;
+}
+
+.site-footer .wordmark {
+  color: var(--bottom-ink);
+  font-size: 25px;
+}
+
+.site-footer .wordmark i {
+  background: #a3a5a6;
+  box-shadow: none;
+}
+
+.site-footer p,
+.site-footer .footer-bottom,
+.site-footer .photo-credits {
+  color: var(--bottom-muted);
+}
+
+.site-footer .footer-main p {
+  font-size: 15px;
+  line-height: 1.65;
+}
+
+.site-footer .footer-main > div {
+  gap: 18px;
+  font-size: 15px;
+}
+
+.site-footer a:hover {
+  color: #606162;
+}
+
+.site-footer .footer-bottom {
+  margin-top: 36px;
+  font-size: 12px;
+}
+
+.site-footer .footer-bottom button {
+  min-height: 46px;
+  border: 1px solid #9fa0a180;
+  border-radius: 0;
+  background: #dfe0e085;
+  color: var(--bottom-ink);
+}
+
+.site-footer #motion-status {
+  color: #5b5c5d;
+}
+
+.site-footer .photo-credits summary {
+  min-height: 36px;
+  padding-block: 8px;
+}
+
+:is(#how, #booking, .site-footer) :is(a, button):focus-visible {
+  outline: 2px solid #606162;
+  outline-offset: 5px;
+}
+
+/* Content stays readable even if the observer does not run. */
+.js :is(#how, #booking) .reveal {
+  opacity: 1;
+  transform: none;
+  filter: none;
+  transition: none;
+}
+
+.js :is(#how, #booking) .reveal.is-visible {
+  animation: bottom-pastel-arrive .6s cubic-bezier(.2,.8,.2,1) both;
+}
+
+.js #how :is(.step, .process-card):nth-child(2).is-visible {
+  animation-delay: .09s;
+}
+
+.js #how :is(.step, .process-card):nth-child(3).is-visible {
+  animation-delay: .18s;
+}
+
+@keyframes bottom-pastel-arrive {
+  from { opacity: .7; translate: 0 12px; }
+  to { opacity: 1; translate: 0 0; }
+}
+
+@media (max-width: 1000px) {
+  #how :is(.step, .process-card) {
+    padding: 187px 22px 28px;
+    min-height: 415px;
+  }
+
+  #how :is(.step, .process-card)::before {
+    height: 155px;
+  }
+
+  #how :is(.step, .process-card) h3 {
+    font-size: 27px;
+  }
+
+  #how .about-panel {
+    grid-template-columns: minmax(0, 1.5fr) minmax(220px, 1fr);
+    gap: 30px;
+    padding: 30px;
+  }
+
+  #booking {
+    gap: 38px;
+  }
+
+  #booking .inquiry-form {
+    padding: 28px;
+  }
+
+  .site-footer .footer-main {
+    gap: 28px;
+  }
+}
+
+@media (max-width: 760px) {
+  #how {
+    padding-block: 72px 48px;
+  }
+
+  #how > .section-heading {
+    margin-bottom: 30px;
+  }
+
+  #how #how-title {
+    max-width: 12ch;
+    font-size: clamp(44px, 9vw, 68px);
+  }
+
+  #how :is(.steps, .process-grid) {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  #how :is(.step, .process-card) {
+    min-height: 0;
+    padding: 186px 26px 28px;
+  }
+
+  #how :is(.step, .process-card) h3 {
+    max-width: none;
+    font-size: 30px;
+  }
+
+  #how :is(.step, .process-card) p {
+    max-width: 52ch;
+  }
+
+  #how .about-panel {
+    grid-template-columns: 1fr;
+    gap: 27px;
+    padding: 28px;
+    margin-top: 18px;
+  }
+
+  #how .about-panel h3 {
+    font-size: 32px;
+  }
+
+  #how .about-links {
+    align-items: flex-start;
+  }
+
+  #booking {
+    grid-template-columns: 1fr;
+    gap: 36px;
+    padding-block: 58px 70px;
+  }
+
+  #booking .booking-copy h2 {
+    max-width: 12ch;
+    font-size: clamp(43px, 8vw, 60px);
+    margin-bottom: 22px;
+  }
+
+  #booking .booking-copy > p {
+    max-width: 48ch;
+    margin-bottom: 23px;
+    font-size: 16px;
+  }
+
+  #booking .booking-emblem {
+    display: none;
+  }
+
+  #booking .inquiry-form {
+    padding: 27px;
+  }
+
+  .site-footer {
+    padding-block: 36px 90px;
+  }
+
+  .site-footer .footer-main {
+    grid-template-columns: 1fr;
+    gap: 23px;
+  }
+
+  .site-footer .footer-main > div {
+    flex-direction: row;
+    align-items: start;
+    justify-content: start;
+    gap: 22px;
+  }
+
+  .site-footer .footer-bottom {
+    align-items: start;
+    gap: 18px;
+    margin-top: 28px;
+  }
+}
+
+@media (max-width: 420px) {
+  #how :is(.step, .process-card) {
+    padding-inline: 23px;
+  }
+
+  #how .about-panel {
+    padding: 24px;
+  }
+
+  #how .about-links .button {
+    width: 100%;
+    padding-inline: 15px;
+  }
+
+  #booking .inquiry-form {
+    padding: 22px;
+  }
+
+  #booking .form-row {
+    grid-template-columns: 1fr;
+    gap: 19px;
+  }
+
+  #booking .inquiry-form label .field-hint {
+    display: block;
+    margin: 3px 0 0;
+  }
+
+  #booking .inquiry-form > .button {
+    padding-inline: 12px;
+    font-size: 15px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .js :is(#how, #booking) .reveal.is-visible {
+    animation: none;
+  }
+}
+
+.motion-off :is(#how, #booking) .reveal.is-visible {
+  animation: none;
+}
+
+@media print {
+  #how,
+  #booking {
+    padding-block: 28px;
+  }
+
+  #how :is(.step, .process-card)::before,
+  #how :is(.step, .process-card)::after,
+  #how .about-panel::after,
+  #booking .inquiry-form::after {
+    display: none;
+  }
+
+  #how :is(.step, .process-card) {
+    padding-top: 90px;
+    background: white;
+    break-inside: avoid;
+  }
+}

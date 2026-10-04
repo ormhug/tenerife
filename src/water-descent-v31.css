@@ -1,0 +1,155 @@
+/* A short waterline connects the Atlantic photograph to a calm submerged page.
+   All effects are decorative, scroll driven, and outside the content flow. */
+#services.catalog-section.water-catalog {
+  --water-phase:0;
+  --water-surface-shift:0px;
+  --water-flow-x:0px;
+  --water-light-shift:0px;
+  background:linear-gradient(180deg,#e1e2e2 0px,#e3e4e4 210px,#e9e9e9 420px,#edeeee 640px);
+  position:relative;
+  isolation:isolate;
+  overflow:visible;
+  border-top:0;
+}
+#services.water-catalog > .catalog-details {display:none;}
+#services.water-catalog > :not(.water-descent):not(.water-descent-field):not(.catalog-details) {position:relative;z-index:1;}
+.water-ocean-ending .water-ocean-floor {
+  position:absolute;
+  z-index:-1;
+  left:0;
+  right:0;
+  bottom:-1px;
+  height:145px;
+  pointer-events:none;
+  background:linear-gradient(180deg,transparent 0%,#a2a4a512 30%,#c2c3c478 76%,#d4d5d5d9 100%);
+  opacity:calc(.65 + var(--water-phase,0) * .35);
+}
+.water-descent {
+  position:absolute;
+  z-index:0;
+  top:-92px;
+  left:0;
+  right:0;
+  height:220px;
+  overflow:clip;
+  pointer-events:none;
+  user-select:none;
+}
+.water-descent-photo {
+  position:absolute;
+  inset:0 0 76px;
+  overflow:clip;
+  opacity:calc(.52 - var(--water-phase,0) * .15);
+  mask-image:linear-gradient(180deg,transparent,#000000 22%,#000000 62%,transparent);
+  -webkit-mask-image:linear-gradient(180deg,transparent,#000000 22%,#000000 62%,transparent);
+}
+.water-descent-photo img {
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:50% 88%;
+  max-width:none;
+  filter:saturate(.38) contrast(.78) brightness(1.14);
+  transform:translate3d(0,calc(var(--water-surface-shift) * .22),0) scale(1.07);
+}
+.water-descent-surface {
+  position:absolute;
+  inset:0;
+  display:block;
+  width:calc(100% + 72px);
+  max-width:none;
+  height:220px;
+  margin-left:-36px;
+  transform:translate3d(var(--water-flow-x),var(--water-surface-shift),0);
+  overflow:visible;
+}
+.water-surface-line {vector-effect:non-scaling-stroke;stroke-linecap:round;}
+.water-surface-line-front {stroke:#f8f9f9;stroke-width:2;opacity:.72;filter:drop-shadow(0 2px 3px #5a5b5c40);}
+.water-surface-line-back {stroke:#f1f2f2cc;stroke-width:1;opacity:.36;}
+.water-surface-foam {
+  position:absolute;
+  top:93px;
+  left:-6%;
+  width:112%;
+  height:33px;
+  background:radial-gradient(ellipse at 24% 50%,#f3f4f47a,transparent 38%),radial-gradient(ellipse at 78% 25%,#f0f0f072,transparent 45%);
+  filter:blur(7px);
+  transform:translate3d(calc(var(--water-flow-x) * -.4),var(--water-surface-shift),0);
+  opacity:calc(.52 + var(--water-phase,0) * .18);
+}
+.water-descent-field {
+  position:absolute;
+  z-index:0;
+  top:0;
+  left:0;
+  right:0;
+  height:450px;
+  overflow:clip;
+  pointer-events:none;
+  user-select:none;
+  mask-image:linear-gradient(180deg,#000000,#000000 40%,transparent 100%);
+  -webkit-mask-image:linear-gradient(180deg,#000000,#000000 40%,transparent 100%);
+}
+.water-descent-rays {
+  position:absolute;
+  top:-40px;
+  left:6%;
+  width:88%;
+  height:450px;
+  background:conic-gradient(from 155deg at 34% 0%,transparent 0deg,#f8f9f98a 6deg,transparent 13deg,#f3f4f454 21deg,transparent 29deg,#ffffff69 39deg,transparent 48deg);
+  filter:blur(11px);
+  opacity:calc(.13 + var(--water-phase,0) * .14);
+  transform:translate3d(calc(var(--water-flow-x) * .35),var(--water-light-shift),0);
+}
+.water-descent-caustics {
+  position:absolute;
+  inset:40px -8% -20px;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 720 260'%3E%3Cg fill='none' stroke='%23ffffff' stroke-width='2.5' opacity='.74'%3E%3Cpath d='M-35 72C20 5 68 107 113 45S212 67 252 27 336 92 390 43 479 40 510 13 605 96 651 41 731 20 764 62M-22 151C18 186 64 83 112 130S218 104 253 142 342 92 396 136 469 180 514 122 617 172 663 128 734 154 770 116M-15 224C39 176 87 271 128 222S211 244 265 209 349 263 397 222 490 205 528 240 615 176 672 231 745 206 770 243M29 31C92 92 6 131 68 189S99 231 128 279M162-24C115 44 202 58 167 116S181 194 230 265M306-24C347 31 275 78 317 130S283 194 326 267M455-30C404 42 491 68 450 126S479 199 438 273M591-18C626 43 546 95 589 143S553 222 605 279M710-20C670 44 738 71 696 145S722 211 679 282'/%3E%3C/g%3E%3C/svg%3E");
+  background-size:720px 260px;
+  background-position:0 0;
+  filter:blur(.65px);
+  opacity:calc(.15 + var(--water-phase,0) * .12);
+  transform:translate3d(calc(var(--water-flow-x) * -.65),calc(var(--water-light-shift) * .65),0) skewX(-10deg) scale(1.04);
+  mask-image:linear-gradient(90deg,#000000 0%,#000000 15%,transparent 38%,transparent 68%,#000000 100%);
+  -webkit-mask-image:linear-gradient(90deg,#000000 0%,#000000 15%,transparent 38%,transparent 68%,#000000 100%);
+}
+.water-descent-bubbles {position:absolute;inset:0;}
+.water-bubble {
+  position:absolute;
+  left:var(--bubble-x);
+  top:var(--bubble-y);
+  width:var(--bubble-size);
+  height:var(--bubble-size);
+  border:1px solid #f8f8f8b0;
+  border-radius:50%;
+  background:radial-gradient(circle at 32% 26%,#ffffff96,transparent 55%);
+  box-shadow:0 1px 2px #7e808121,inset 0 -.5px 1px #a4a6a740;
+  opacity:calc(.28 + var(--water-phase,0) * .22);
+  transform:translate3d(0,calc(var(--water-phase,0) * var(--bubble-drift) * -1),0);
+}
+.water-catalog.water-descent-still .water-descent-photo img,
+.water-catalog.water-descent-still .water-descent-surface,
+.water-catalog.water-descent-still .water-surface-foam,
+.water-catalog.water-descent-still .water-descent-rays,
+.water-catalog.water-descent-still .water-descent-caustics,
+.water-catalog.water-descent-still .water-bubble {transform:none;}
+.water-catalog.water-descent-still .water-bubble {display:none;}
+@media(max-width:760px) {
+  #services.catalog-section.water-catalog {background:linear-gradient(180deg,#e1e2e2 0px,#e3e4e4 180px,#e9e9e9 330px,#edeeee 470px);}
+  .water-descent {top:-74px;height:180px;}
+  .water-descent-surface {height:180px;}
+  .water-descent-photo {bottom:59px;}
+  .water-surface-foam {top:74px;height:26px;}
+  .water-ocean-ending .water-ocean-floor {height:115px;}
+  .water-descent-field,.water-descent-rays {height:340px;}
+  .water-descent-caustics {background-size:520px 188px;opacity:.17;}
+  .water-bubble:nth-child(even) {display:none;}
+}
+@media(prefers-reduced-motion:reduce) {
+  .water-descent-photo img,.water-descent-surface,.water-surface-foam,.water-descent-rays,.water-descent-caustics,.water-bubble {transform:none;}
+  .water-bubble {display:none;}
+}
+@media print {
+  .water-ocean-floor,.water-descent,.water-descent-field {display:none;}
+  #services.catalog-section.water-catalog {background:#ffffff;}
+}

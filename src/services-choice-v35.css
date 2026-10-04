@@ -1,0 +1,31 @@
+/* The heading names the action; collection cards carry the choices. */
+#services.catalog-section > .section-heading {
+  display: block;
+  margin-bottom: 28px;
+}
+#services.catalog-section > .section-heading h2 {
+  max-width: 100%;
+  text-wrap: balance;
+}
+#services.catalog-section .services-kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  color: #525353;
+  font: 600 12px/1.5 Onest, Arial, sans-serif;
+  letter-spacing: .035em;
+}
+#services.catalog-section .services-kicker::before {
+  content: '↗';
+  display: grid;
+  place-items: center;
+  width: 24px;
+  height: 24px;
+  border: 1px solid #9a9b9b8c;
+  color: #525353;
+  font: 400 17px/1 Onest, Arial, sans-serif;
+}
+@media (max-width: 760px) {
+  #services.catalog-section > .section-heading {margin-bottom: 24px;}
+  #services.catalog-section .services-kicker {font-size: 12px;}
+}

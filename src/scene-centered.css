@@ -1,0 +1,84 @@
+/* Keep the offer in the centre of every photograph while the scene scrolls. */
+.island-editorial .chapter-shade {
+  background: linear-gradient(180deg, #13141469 0%, #13141438 23%, #13141478 49%, #13141459 74%, #131414a3 100%);
+}
+.island-editorial .chapter-body {
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  padding: 96px max(28px, 4vw) 66px;
+  text-align: center;
+}
+.island-editorial .chapter-top {
+  position: absolute;
+  top: 30px;
+  left: max(28px, 4vw);
+  right: max(28px, 4vw);
+  text-align: left;
+}
+.island-editorial .chapter-name {
+  width: min(100%, 18ch);
+  margin: 0 0 25px;
+  font-size: clamp(64px, 7.2vw, 106px);
+  line-height: 1.02;
+  text-align: center;
+  text-shadow: 0 3px 32px #13141473;
+}
+.island-editorial .offer-title-text {transform-origin: center bottom;}
+.island-editorial .chapter-bottom {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  width: min(100%, 700px);
+  text-align: center;
+}
+.island-editorial .chapter-description p {
+  max-width: 55ch;
+  margin-inline: auto;
+  font-size: clamp(17px, 1.35vw, 21px);
+  line-height: 1.5;
+  text-shadow: 0 2px 16px #13141480;
+}
+.island-editorial .chapter-choice {
+  width: min(100%, 350px);
+  margin: 0;
+}
+.island-editorial .chapter-for {text-align: center;}
+.island-editorial .chapter-for p {margin-inline: auto;}
+.island-editorial .chapter-book.button {margin-top: 0;}
+
+@media (min-width: 761px) and (max-height: 750px) {
+  .island-editorial .chapter-body {padding-top: 87px;padding-bottom: 57px;}
+  .island-editorial .chapter-top {top: 27px;}
+  .island-editorial .chapter-name {margin-bottom: 20px;}
+  .island-editorial .chapter-bottom {gap: 21px;}
+  .island-editorial .chapter-description p {font-size: 17px;line-height: 1.45;}
+}
+@media (max-width: 760px) {
+  .island-editorial .chapter-body {padding: 103px 25px 65px;}
+  .island-editorial .chapter-top {top: 25px;left: 22px;right: 22px;}
+  .island-editorial .chapter-name {
+    font-size: clamp(43px, 9.2vw, 70px);
+    line-height: 1.08;
+    width: min(100%, 17ch);
+    margin-bottom: 24px;
+  }
+  .island-editorial .chapter-bottom {gap: 24px;}
+  .island-editorial .chapter-description p {font-size: 16px;line-height: 1.5;max-width: 38ch;}
+  .island-editorial .chapter-choice {margin: 0;}
+  .island-editorial .chapter-book.button {margin-top: 0;}
+}
+@media (max-width: 760px) and (max-height: 700px) {
+  .island-editorial .chapter-body {padding-top: 98px;padding-bottom: 47px;}
+  .island-editorial .chapter-name {font-size: clamp(39px, 9vw, 60px);margin-bottom: 18px;}
+  .island-editorial .chapter-bottom {gap: 20px;}
+  .island-editorial .chapter-description p {font-size: 15px;line-height: 1.45;}
+}
+@media print {
+  .island-editorial .chapter-body {padding: 20px 0;display: block;text-align: left;}
+  .island-editorial .chapter-top {position: static;}
+  .island-editorial .chapter-name {font-size: 36px;margin: 15px 0;width: auto;text-align: left;text-shadow: none;}
+  .island-editorial .chapter-bottom {display: block;width: auto;text-align: left;}
+  .island-editorial .chapter-description p {margin-inline: 0;text-shadow: none;}
+}

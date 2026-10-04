@@ -1,0 +1,95 @@
+/* Mobile opening study v58. Working source and desktop layout stay separate. */
+.photo-window .photo-pagination {display: none;}
+@media (max-width: 760px) {
+  html {overflow-x: clip;}
+  .hero h1 {
+    width: calc(100% - 48px);
+    height: calc(100svh - 96px - env(safe-area-inset-top, 0px));
+    height: calc(100lvh - 96px - env(safe-area-inset-top, 0px));
+    min-height: 0;
+    margin-bottom: 0;
+    font-family: 'Bricolage Grotesque', Onest, sans-serif;
+    font-weight: 750;
+    font-variation-settings: 'opsz' 96, 'wdth' 100;
+    font-size: clamp(76px, calc((100vw - 48px) / 3.6), 150px);
+    line-height: 1.03;
+    letter-spacing: -.025em;
+    color: #f7f8f8;
+  }
+  .hero .brand-line {padding: 4px 0 8px;}
+  .hero .brand-word {
+    transform: scale(var(--brand-width, 1));
+    transform-origin: left top;
+  }
+  #hero-title .brand-glyph,
+  #hero-title .brand-glyph:hover {transform: none !important;will-change: auto;}
+  /* The backdrop belongs to the opening, not the long choice section below. */
+  .hero-backdrop {
+    bottom: auto;
+    height: 100svh;
+    height: 100lvh;
+  }
+  .hero-landscape {
+    inset: 0;
+    height: 100%;
+    object-position: 40% 58%;
+    opacity: 1;
+    filter: saturate(.88);
+    transform: none;
+  }
+  .hero-shade {
+    background: linear-gradient(180deg, rgba(20, 26, 30, .56),
+      rgba(20, 26, 30, .25) 45%, rgba(20, 26, 30, .44));
+  }
+  .photo-window .photo-pause {display: none;}
+  .photo-window .photo-pagination {
+    position: absolute;
+    z-index: 6;
+    left: 50%;
+    top: 12px;
+    bottom: auto;
+    translate: -50% 0;
+    display: flex;
+    flex: none;
+    width: 132px;
+    min-width: 0;
+    max-width: none;
+    height: 44px;
+    margin: 0;
+    padding: 0;
+    border-radius: 24px;
+    background: rgba(20, 26, 30, .24);
+  }
+  .photo-pagination .photo-dot {
+    flex: 0 0 44px;
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    border-radius: 50%;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .photo-pagination .photo-dot::before {
+    left: 50%;
+    right: auto;
+    top: 50%;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #ffffff99;
+    transform: translate(-50%, -50%);
+    transition: background 160ms ease, transform 160ms ease;
+  }
+  .photo-pagination .photo-dot[aria-pressed="true"]::before {
+    background: #fff;
+    transform: translate(-50%, -50%) scale(1.5);
+  }
+  .photo-pagination .photo-dot > span {display: none;}
+  .photo-pagination .photo-dot:focus-visible {
+    outline: 2px solid #fff;
+    outline-offset: -3px;
+  }
+  .motion-off .photo-pagination .photo-dot::before {transition: none;}
+}
+@media (max-width: 760px) and (prefers-reduced-motion: reduce) {
+  .photo-pagination .photo-dot::before {transition: none;}
+}

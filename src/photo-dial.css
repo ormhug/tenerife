@@ -1,0 +1,96 @@
+/* Photo controls sit on the picture so browsing is visible at a glance. */
+.photo-window .photo-nav,
+.photo-window .photo-pause {
+  position: absolute;
+  z-index: 6;
+  display: grid;
+  place-items: center;
+  width: 46px;
+  height: 46px;
+  max-width: none;
+  padding: 11px;
+  overflow: visible;
+  clip-path: none;
+  border: 1px solid #f1f1f1d9;
+  border-radius: 0;
+  background: #e8e8e8d9;
+  color: #404142;
+  box-shadow: 0 3px 14px #2b2b2c18;
+  backdrop-filter: blur(18px) saturate(.65);
+  -webkit-backdrop-filter: blur(18px) saturate(.65);
+  cursor: pointer;
+  transition: background 160ms ease, color 160ms ease;
+  -webkit-tap-highlight-color: transparent;
+}
+.photo-window .photo-nav {
+  top: 44%;
+  translate: 0 -50%;
+}
+.photo-window .photo-previous { left: 16px; }
+.photo-window .photo-next { right: 16px; }
+.photo-window .photo-pause { top: 16px; left: 16px; }
+.photo-window .photo-nav svg,
+.photo-window .photo-pause svg {
+  display: block;
+  width: 24px;
+  height: 24px;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.photo-window .photo-pause .play-icon { display: none; }
+.photo-window .photo-pause[aria-pressed="true"] .pause-icon { display: none; }
+.photo-window .photo-pause[aria-pressed="true"] .play-icon { display: block; }
+.photo-window:hover .photo-pause,
+.photo-window .photo-pause:focus-visible {
+  width: 46px;
+  height: 46px;
+  max-width: none;
+  padding: 11px;
+  border-color: #f1f1f1d9;
+  background: #e8e8e8d9;
+}
+.photo-window .photo-nav:hover,
+.photo-window .photo-pause:hover { background: #f4f5f5f2; color: #272828; }
+.photo-window .photo-nav:active { background: #d2d3d4f2; }
+.photo-window .photo-nav:focus-visible,
+.photo-window .photo-pause:focus-visible { outline: 2px solid #7f4530; outline-offset: 3px; }
+.photo-window .photo-pause:disabled { opacity: .65; cursor: default; }
+.photo-browse-hint {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  z-index: 6;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 46px;
+  padding: 9px 14px;
+  border: 1px solid #f1f1f1d9;
+  color: #404142;
+  background: #e8e8e8d9;
+  backdrop-filter: blur(18px) saturate(.65);
+  -webkit-backdrop-filter: blur(18px) saturate(.65);
+  font: 600 13px/1.3 Onest,Manrope,sans-serif;
+  pointer-events: none;
+}
+.photo-browse-count { font-size: 11px; font-weight: 500; font-variant-numeric: tabular-nums; opacity: .8; }
+@media(max-width:520px) {
+  .photo-window .photo-previous,
+  .photo-window .photo-pause { left: 12px; }
+  .photo-window .photo-next,
+  .photo-browse-hint { right: 12px; }
+  .photo-window .photo-pause,
+  .photo-browse-hint { top: 12px; }
+  .photo-browse-hint { gap: 9px; padding: 9px 11px; font-size: 12px; }
+}
+.motion-off .photo-window .photo-nav,
+.motion-off .photo-window .photo-pause { transition: none; }
+@media(prefers-reduced-motion:reduce) {
+  .photo-window .photo-nav,
+  .photo-window .photo-pause { transition: none; }
+}
+@media print {
+  .photo-window .photo-nav,
+  .photo-window .photo-pause,
+  .photo-browse-hint { display: none; }
+}
